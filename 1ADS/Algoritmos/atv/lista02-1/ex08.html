@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Túlio Milde</title>
+</head>
+<body>
+    <h1>Exercicio 08 - Lista 02</h1>
+    Digite quantos minutos a torneira ficou pingando: <input type="text" id="tor1">
+    <br>
+    Digite quantos minutos a torneira ficou pingando: <input type="text" id="tor2">
+    <br>
+    Digite quantos minutos a torneira ficou pingando: <input type="text" id="tor3">
+    <br>
+    <button onclick="gastos()">Ver gastos</button>
+</body>
+</html>
+
+<script>
+    function gastos() {
+        alert('Suas 3 torneiras, juntas, desperdiçaram '+(Number(tor1.value * 15) + Number(tor2.value * 15) + Number(tor3.value * 15))+' litros de água')
+    }
+</script>

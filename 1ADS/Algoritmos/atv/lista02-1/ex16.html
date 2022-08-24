@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famlia Lergica</title>
+</head>
+<body>
+    <h1>Exercicio 16 - Lista 02</h1>
+    Digite a quantidade de moedas depositadas para o Huguinho <input type="text" id="iptMoeda">
+    <br>
+    Digite a quantidade de moedas depositadas para o Zezinho <input type="text" id="iptMoeda2">
+    <br>
+    Digite a quantidade de moedas depositadas para o Luizinho <input type="text" id="iptMoeda3">
+
+    <button onclick="deposito()">Ver depositos</button>
+
+    <div id="res">Ver depositos</div>
+</body>
+</html>
+
+<script>
+    function deposito() {
+        res.innerHTML += '<br>'
+        res.innerHTML += 'Huguinho economizou R$ ' + Number(iptMoeda.value * 0.50) + ' pois fez ' +iptMoeda.value+ ' depositos <br>'
+        res.innerHTML += 'Zezinho economizou R$ ' + Number(iptMoeda2.value * 0.50) + ' pois fez ' +iptMoeda2.value+ ' depositos <br>'
+        res.innerHTML += 'Luizinho economizou R$ ' + Number(iptMoeda3.value * 0.50) + ' pois fez ' +iptMoeda3.value+ ' depositos'
+    }
+</script>
+

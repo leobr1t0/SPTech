@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head> 
+<body>
+    <h1>Exercício 12 - Lista 02</h1>
+
+    Digite o Salario bruto: <input type="text" id="iptSalario">
+    <button onclick="desconto()">Calcular desconto</button>
+
+    <div id="res">Calculo de salário</div>
+</body>
+</html>
+
+<script>
+    function desconto() {
+        res.innerHTML = 'Apesar de seu salário bruto ser: ' + Number(iptSalario.value) + ', após os descontos, você receberá somente: ' + (Number(iptSalario.value) - (Number(iptSalario.value * (1/30)) + Number(iptSalario.value * 0.1) + Number(iptSalario.value * 0.2)))
+    }
+</script>

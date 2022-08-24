@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball</title>
+</head>
+<body>
+    <h1>Exercicio 05 - Lista 02</h1>
+
+    Digite o nome do guerreiro sayajin: <input type="text" id="iptNome">
+    <br>
+    Digite a quantidade de ki normal: <input type="text" id="iptKi">
+    <br>
+    <button onclick="verKi()">Ver ki em cada forma</button>
+</body>
+</html>
+
+<script>
+    function verKi(){
+        alert('O guerreiro sayajin ' +iptNome.value +' está com ' + (Number(iptKi.value) * 50) + ' de ki na forma de Super Sayajin')
+        alert('O guerreiro sayajin ' +iptNome.value +' está com ' + (Number(iptKi.value) * 100) + ' de ki na forma de Super Sayajin 2')
+    }
+</script>

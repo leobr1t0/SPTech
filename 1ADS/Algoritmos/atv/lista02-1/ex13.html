@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandro Timista</title>
+</head>
+<body>
+    <h1>Exercício 13 - Lista 02</h1>
+    Digite quantos paes franceses foram consumidos:  <input type="text" id="iptPaes">
+    <br>
+    Digite quantas casquinhas foram consumidas: <input type="text" id="iptCasc">
+    <br>
+    Digite quantos minutos de caminhada fez no dia: <input type="text" id="iptCam">
+    <br>
+    Digite quantos minutos de musculação fez no dia: <input type="text" id="iptMusc">
+
+    <button onclick="calorias()">Calcular Calorias</button>
+
+    <div id="res">Calcular calorias</div>
+</body>
+</html>
+
+<script>
+    function calorias() {
+        res.innerHTML = 'Entre calorias que ganhou e perdeu, seu saldo de calorias no dia é de: ' + (Number(iptPaes.value * 100) + Number(iptCasc.value * 300) - (Number(iptCam.value * 50) + Number(iptMusc.value * 30)))
+    }
+</script>

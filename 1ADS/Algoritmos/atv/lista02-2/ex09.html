@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+
+<body>
+    <h1>Exercicio 09 - Lista 02 - 2</h1>
+    <label for="infec">Digite quantas pessoas estão infectadas:</label>
+    <input type="text" id="infec"><br><br>
+
+    <button onclick='ontem()'>Infectados ontem</button>
+    <button onclick='amanha()'>Infectados amanhã</button>
+    <button onclick='mes()'>Infectados em 1 mes</button>
+
+    <div id="res">Resultado</div>
+
+</body>
+
+</html>
+
+<script>
+    function ontem() {
+        var infecOntem = Number(infec.value - 35);
+
+        res.innerHTML =`<br> Ontem haviam ${infecOntem} pessoas infectadas`;
+    }
+
+    function amanha() {
+        var infecAmanha = (Number(infec.value) + 35);
+
+        res.innerHTML = `<br> Amanhã haverão ${infecAmanha} pessoas infectadas`
+    }
+
+    function mes() {
+        var infecMes = (Number(infec.value) + (30 * 35));
+
+        res.innerHTML = `<br> Daqui a 1 mês haverão ${infecMes} pessoas infectadas`
+    }
+</script>

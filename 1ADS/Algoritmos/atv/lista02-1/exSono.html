@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fases do sono</title>
+</head>
+<body>
+    <h1>Exercício Sono - Lista 02</h1>
+    Digite quantas horas de sono você dormiu: <input type="text" id="iptSono">
+
+    <button onclick="calcSono()">Calcular Sono</button>
+
+    <div id="res">Calculo de sono</div>
+</body>
+</html>
+
+<script>
+    function calcSono() {
+        var fase1 = iptSono.value - (iptSono.value * 0.95);
+        var fase2 = iptSono.value - (iptSono.value * 0.55);
+        var fase3 = iptSono.value - (iptSono.value * 0.7);
+        var faseRem = iptSono.value - (iptSono.value * 0.8);
+
+        res.innerHTML = '<br>'
+        res.innerHTML += 'Ao dormir ' + iptSono.value + ' horas você dormiu: <br>'
+        res.innerHTML += fase1 + ' horas na fase 1 <br>'
+        res.innerHTML += fase2 + ' horas na fase 2 <br>'
+        res.innerHTML += fase3 + ' horas na fase 3 <br>'
+        res.innerHTML += faseRem + ' horas na fase REM'
+    }
+</script>

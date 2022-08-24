@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execício 19</title>
+</head>
+<body>
+    <h1>Exercício 19 - Lista 02</h1>
+    Digite a quantidade de filhos menores de 10 anos <input type="text" id="filhosMenor10">
+    <br>
+    Digite a quantidade de filhos maiores de 10 anos <input type="text" id="filhosMaior10">
+    <br>
+    <button onclick="auxFilho()">Calcular Auxílio filhos</button>
+    <div id="res">Auxílio filhos</div>
+</body>
+</html>
+
+<script>
+    function auxFilho() {
+        fMenor10 = filhosMenor10.value * 30
+        fMaior10 = filhosMaior10.value * 20
+        auxFilhos = fMaior10 + fMenor10
+
+        res.innerHTML = '<br>'
+        res.innerHTML += 'Você tem ' + filhosMenor10.value + ' filhos menores de 10 anos e ' + filhosMaior10.value + ' filhos maiores de 10 anos, logo, seu auxílio filhos será de: R$' + auxFilhos
+    }
+</script>

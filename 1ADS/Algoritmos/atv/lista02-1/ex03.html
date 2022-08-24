@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilhete Unico</title>
+</head>
+<body>
+    <h1>Exercício 03 - Lista 02</h1>
+
+    Digite o valor da passagem: <input type="text" id="passagem">
+    <br>
+    Digite o quantas viagens faz por mês: <input type="text" id="viagem">
+    <br>
+    <button onclick="economia()">Ver economia</button>
+</body>
+</html>
+
+<script>
+    function economia() {
+        alert('Você economizará R$' + (Number(passagem.value) / 2) * (Number(viagem.value))  + ' por mês');
+    }
+</script>

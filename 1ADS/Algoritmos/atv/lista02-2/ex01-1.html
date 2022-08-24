@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01-1</title>
+</head>
+<body>
+    <h1>Exericio 01-1 Lista 02-2</h1>
+    Digite o nome do produto: <input type="text" id="produto"><br>
+    Digite a quantidade do produto: <input type="text" id="qtd"><br>
+    Digite o preço unitário do produto: <input type="text" id="preco"><br>
+
+    <button onclick="calcPreco()">Calcular Preço</button>
+
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function calcPreco() {
+        var precoProd = Number(preco.value)
+        var precoVenda = Number(preco.value) * 1.22
+        var precoTotal = precoVenda * Number(qtd.value)
+        var lucroTotal = Number(preco.value) * Number(qtd.value)
+        var precoTributado = Number(preco.value) + 1.25
+
+        res.innerHTML += '<hr>'
+        res.innerHTML += `Nome: ${produto.value}<br>`
+        res.innerHTML += `Quantidade: ${qtd.value}<br>`
+        res.innerHTML += `Preço: R$ ${precoProd.toFixed(2)}<br>`
+        res.innerHTML += `Preço Unitário: R$ ${precoVenda.toFixed(2)}<br>`
+        res.innerHTML += `Preço Total: R$ ${precoTotal.toFixed(2)}<br>`
+        res.innerHTML += `Lucro Total: R$ ${lucroTotal.toFixed(2)}<br>`
+        res.innerHTML += `Preço Tributado: R$ ${precoTributado.toFixed(2)}<br>`
+
+
+    }
+</script>

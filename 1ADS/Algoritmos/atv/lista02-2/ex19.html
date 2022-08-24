@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 19</title>
+</head>
+<body>
+    Quantos meses a reforma durará: <input type="text" id="reforma">
+    Qual o custo diário: <input type="text" id="diario">
+
+    <button onclick="custSemanal()">Ver projeção semanal</button>
+    <button onclick="custMensal()">Ver projeção mensal</button>
+    <button onclick="custTotal()">Ver projeção total</button>
+
+    <div id="res">Ver projeções</div>
+</body>
+</html>
+
+<script>
+    function custSemanal() {
+        var semanal = diario.value * 7
+        res.innerHTML = `A projeção semanal é de R$ ${semanal},00`
+    }
+
+    function custMensal() {
+        var mensal = (diario.value * 30) + 1200
+        res.innerHTML = `A projeção mensal é de R$ ${mensal},00`
+    }
+
+    function custTotal() {
+        var mensal = (diario.value * 30) + 1200
+        var total = mensal * reforma.value;
+        res.innerHTML = `A projeção total é de R$ ${total},00`
+    }
+</script>

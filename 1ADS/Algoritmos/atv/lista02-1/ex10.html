@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo IMC</title>
+</head>
+<body>
+    <h1>Exercicio 10 - Lista 02</h1>
+    Digite seu peso: <input type="text" id="iptPeso">
+    Digite sua altura: <input type="text" id="iptAltura">
+
+    <button onclick="imcHomem()">IMC Homem</button>
+    <button onclick="imcMulher()">IMC Mulher</button>
+
+    <div id="res">Calculo de IMC</div>
+</body>
+</html>
+
+<script>
+    function imcHomem() {
+        res.innerHTML = 'O seu IMC é ' + (Number(iptPeso.value) / Number(iptAltura.value)**2)
+    }
+
+    function imcMulher() {
+res.innerHTML = 'O seu IMC é ' + (Number(iptPeso.value) / Number(iptAltura.value **2) * 0.9)
+    }
+</script>

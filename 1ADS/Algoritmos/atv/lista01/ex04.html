@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+</head>
+<body>
+    <h1>Exercício 04 - Lista 1</h1>
+    Informe sua nota na escola: <input type="text" id="iptNota" placeholder="Informe sua nota">
+
+    <button onclick="opnAvo()">Opinião da avó</button>
+    <button onclick="opnMae()">Opinião da mãe</button>
+</body>
+</html>
+<script>
+    function opnAvo(){
+        alert("Muito bem, que neto inteligente, porque tirou " + iptNota.value)
+    }
+
+    function opnMae() {
+        alert("Não fez mais que tua obrigação com essa nota " + iptNota.value)
+    }
+</script>

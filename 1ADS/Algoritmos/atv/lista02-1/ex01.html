@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <h1>Exercicio 01 - Lista 02</h1>
+    Digite sua idade: <input type="text" id="iptIdade">
+    <br>
+    <button onclick="homem()">Aposentadoria Homem</button>
+    <br>
+    <button onclick="mulher()">Aposentadoria Mulher</button>
+</body>
+</html>
+
+<script>
+    function homem() {
+        alert('Faltam ' + (70 - Number(iptIdade.value)) + ' anos para sua aposentadoria')
+    }
+
+    function mulher() {
+        alert('Faltam ' + (60 - Number(iptIdade.value)) + ' anos para sua aposentadoria')
+    }
+</script>

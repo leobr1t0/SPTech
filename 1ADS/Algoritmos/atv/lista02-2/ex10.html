@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+
+<body>
+    <h1>Exercicio 10</h1>
+    <h2>Lista 02-2</h2>
+
+    <button onclick="oito()">08 passagens</button>
+    <button onclick="vinte()">20 passagens</button>
+    <button onclick="cinquenta()">50 passagens</button>
+
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    function oito() {
+
+        var desc = (100 - ((32.42 / 35.20) * 100));
+        var bns = ((35.20 - 32.42) / 4.40);
+
+        res.innerHTML = `Ao comprar 08 passagens, você pagou ${desc.toFixed(0)}% a menos. É como se tivesse ganhado ${bns.toFixed(0)} passagens de "bônus".`
+    }
+
+    function vinte() {
+        var desc20 = (100 - ((78.65 / 88) * 100));
+        var bns20 = ((88 - 78.65) / 4.40);
+        
+        res.innerHTML = `Ao comprar 20 passagens, você pagou ${desc20.toFixed(0)}% a menos. É como se tivesse ganhado ${bns20.toFixed(0)} passagens de "bônus".`
+    }
+
+    function cinquenta() {
+        var desc50 = (100 - ((191.41 / 220) * 100));
+        var bns50 = ((220 - 191.41) / 4.40);
+
+        res.innerHTML = `Ao comprar 50 passagens, você pagou ${desc50.toFixed(0)}% a menos. É como se tivesse ganhado ${bns50.toFixed(0)} passagens de "bônus".`
+    }
+</script>

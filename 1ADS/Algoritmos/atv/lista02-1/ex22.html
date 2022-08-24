@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+</head>
+<body>
+    <h1>Exercício 22 - Lista 02</h1>
+    Digite a quantidade de votos que Zé Buduia obteve: <input type="text" id="iptZe"> 
+    <br>
+    Digite a quantidade de votos que Maria Bigodenha obteve: <input type="text" id="iptMaria">
+    <br>
+    Digite a quantidade de votos brancos: <input type="text" id="iptBranco">
+    <br>
+    Digite a quantidade de votos nulos: <input type="text" id="iptNulo">
+    <br>
+
+    <button onclick="votos()">Calcular Votos</button>
+
+    <div id="res">Calculo de votos</div>
+</body>
+</html>
+
+<script>
+    function votos() {
+
+        var total = Number(iptZe.value) + Number(iptMaria.value) + Number(iptBranco.value) + Number(iptNulo.value)
+        var ze = (Number(iptZe.value) / total) * 100
+        var maria = (Number(iptMaria.value) / total) * 100
+        var invalidos = ((Number(iptBranco.value) + Number(iptNulo.value)) / total) * 100
+
+        res.innerHTML = '<br>'
+        res.innerHTML += 'Total de votos: ' + total 
+        res.innerHTML += '<br> Inválidos: ' + invalidos + '% (' + (Number(iptBranco.value) + Number(iptNulo.value)) + ' votos)'  
+        res.innerHTML += '<br> Zé Buduia: ' + ze + '% (' + iptZe.value + ' votos)' 
+        res.innerHTML += '<br> Maria: ' + maria + '% (' +iptMaria.value + ' votos)'
+
+    }
+</script>

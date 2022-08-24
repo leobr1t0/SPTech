@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícío 02-2</title>
+</head>
+<body>
+    <h1>Exercício 02-2 Lista 02-2</h1>
+
+    Digite o saldo anterior <input type="text" id="saldoAnt">
+    <br>
+    Digite o valor de débito <input type="text" id="debito">
+    <br>
+    Digite o valor de crédito <input type="text" id="credito">
+    <button onclick="calcSaldo()">Calcular</button>
+    <br>
+
+    <div id="res"></div>
+
+</body>
+</html>
+<script>
+    function calcSaldo() {
+        var saldoFinal =  (Number(saldoAnt.value) + Number(credito.value)) - Number(debito.value)
+        var diferenca = Number(saldoAnt.value - saldoFinal)
+        var proporcao = (saldoFinal / Number(saldoAnt.value)) * 100
+
+        res.innerHTML += '<br>'
+        res.innerHTML += `Saldo anterior: R$ ${saldoAnt.value} <br>`
+        res.innerHTML += `Movimentação: R$ ${credito.value - debito.value} <br>`
+        res.innerHTML += `Saldo Final: R$ ${saldoFinal} <br>`
+        res.innerHTML += `Diferença: ${diferenca} <br>`
+        res.innerHTML += `Proporção: ${proporcao} <br>`
+
+        saldoAnt.value = ''
+        debito.value = ''
+        credito.value = ''
+    }
+</script>
+
