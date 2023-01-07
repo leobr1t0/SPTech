@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista 02 - 1</title>
+</head>
+<body>
+    <h1>Exercício 07 - Lista 02 - 1</h1>
+    Digite um número <input type="text" id="n1"><br>
+    Digite um número <input type="text" id="n2"><br>
+    <button onclick="soma()">Soma</button>
+    <button onclick="subtracao()">Subtração</button>
+    <button onclick="multiplicacao()">Multiplicação</button>
+    <button onclick="divisao()">Divisao</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function soma() {
+        var num1 = Number(n1.value);
+        var num2 = Number(n2.value);
+
+        var soma = num1 + num2;
+        
+        res.innerHTML += '<br>A soma entre ' + num1 + ' e ' + num2 + ' resulta em ' + soma 
+    }
+    
+    function subtracao() {
+        var num1 = Number(n1.value);
+        var num2 = Number(n2.value);
+        
+        var sub = num1 - num2;
+        
+        res.innerHTML += '<br>A subtração entre ' + num1 + ' e ' + num2 + ' resulta em ' + sub 
+    }
+    
+    function multiplicacao() {
+        var num1 = Number(n1.value);
+        var num2 = Number(n2.value);
+
+        var mult = num1 * num2;
+        
+        res.innerHTML += '<br>A multiplicação entre ' + num1 + ' e ' + num2 + ' resulta em ' + mult 
+    }
+    
+    function divisao() {
+        var num1 = Number(n1.value);
+        var num2 = Number(n2.value);
+        
+        var divisao = num1 / num2;
+
+        res.innerHTML += '<br>A divisão entre ' + num1 + ' e ' + num2 + ' resulta em ' + divisao 
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 21 - Lista 02 - 1</title>
+</head>
+<body>
+    <h1>Exercicio 21 - Lista 02 - 1</h1>
+    Digite o ki base do guerreiro sayajin <input type="text" id="iptKiBase">
+    <p>Transformar em....</p> 
+    <button onclick="ssj()">SSJ</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function ssj() {
+        var kiBase = Number(iptKiBase.value);
+        kiSSJ = kiBase * 50
+
+        res.innerHTML += "<br>Após se transformar em SSJ, o ki desse Sayajin passa a ser de " + kiSSJ
+    }
+    
+    function ssj2() {
+        var kiBase = Number(iptKiBase.value);
+        kiSSJ2 = kiBase * 100
+        
+        res.innerHTML += "<br>Após se transformar em SSJ2, o ki desse Sayajin passa a ser de " + kiSSJ2
+    }
+    
+    function ssj3() {
+        var kiBase = Number(iptKiBase.value);
+        kiSSJ3 = kiBase * 200
+        
+        res.innerHTML += "<br>Após se transformar em SSJ3, o ki desse Sayajin passa a ser de " + kiSSJ3
+    }
+</script>
+

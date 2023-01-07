@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 13 - Lista 02 - 1</title>
+    <title>Exercicio 14 - Lista 02 - 1</title>
 </head>
 <body>
-    <h1>Exercício 13 - Lista 02 - 1</h1>
+    <h1>Exercício 14 - Lista 02 - 1</h1>
     Digite quantos paes franceses foram consumidos:  <input type="text" id="iptPaes">
     <br>
     Digite quantas casquinhas foram consumidas: <input type="text" id="iptCasc">
@@ -18,12 +18,16 @@
 
     <button onclick="calorias()">Calcular Calorias</button>
 
+    <img src="https://cdn-icons-png.flaticon.com/512/1011/1011812.png" height="200px" style="display: none" id="resImg">
     <div id="res">Calcular calorias</div>
 </body>
 </html>
 
 <script>
     function calorias() {
+        res.style.color = 'white';
+        res.style.background = 'red';
+        resImg.style.display = 'block';
         res.innerHTML = 'Entre calorias que ganhou e perdeu, seu saldo de calorias no dia é de: ' + (Number(iptPaes.value * 100) + Number(iptCasc.value * 300) - (Number(iptCam.value * 50) + Number(iptMusc.value * 30)))
     }
 </script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20 - Lista 02 - 1</title>
+</head>
+<body>
+    <h1>Exercicio 20 - Lista 02 - 1</h1>
+    Digite o valor do salário do irmão de igor <input type="text" id="iptValorSalario"><br>
+    Digite a quantidade de ficantes do irmão de igor <input type="text" id="iptQtdFicantes"><br>
+    Digite a quantidade de fora do irmão de igor <input type="text" id="iptQtdForas"><br>
+    <button onclick="calcular()">Calcular</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var salarioIrmao = Number(iptValorSalario.value);
+        var ficantesIrmao = Number(iptQtdFicantes.value);
+        var forasIrmao = Number(iptQtdForas.value);
+        var metaSalarioIgor = salarioIrmao * 1.1;
+        var metaFicantesIgor = ficantesIrmao+1;
+        var metaForasIgor = forasIrmao-1;
+
+        res.innerHTML += "<h1>Estátisticas Irmão de igor</h1>" + 
+                         "Salário: " + salarioIrmao + "<br> Ficantes: " + ficantesIrmao + "<br> Foras: " + forasIrmao + "<br>"
+
+        res.innerHTML += "<h1>Estátisticas Igor</h1>" + 
+                         "Meta de Salário: " + metaSalarioIgor + "<br> Meta de Ficantes: " + metaFicantesIgor + "<br> Meta de Foras: " + metaForasIgor + "<hr>"
+
+    }
+</script>

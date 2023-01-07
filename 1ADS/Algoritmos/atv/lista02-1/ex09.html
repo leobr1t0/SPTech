@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09 - Lista 02 - 1</title>
+</head>
+<body>
+    <h1>Exercício 09 - Lista 02 - 1</h1>
+
+    Digite quanto custa o ingresso comum <input type="text" id="iptCusto"><br>
+    Digite a quantidade de ingressos comuns vendidos <input type="text" id="qtdComum"><br>
+    Digite a quantidade de ingressos de estudante vendidos <input type="text" id="qtdEst"><br>
+    <button onclick="calcular()">Calcular</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function calcular() { 
+        var custoComum = Number(iptCusto.value);
+        var qtdoComum = Number(qtdComum.value);
+        var qtdoEstudante = Number(qtdEst.value);
+        var custoEstudante = custoComum / 2;
+
+        var arrecadacao = (custoComum * qtdoComum) + (custoEstudante * qtdoEstudante);
+
+        res.innerHTML += '<br>Sua arrecadação foi de R$ ' + arrecadacao + ',00 reais'
+
+    }
+</script>
