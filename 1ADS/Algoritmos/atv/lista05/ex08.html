@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 08 - Lista 05</h1>
+    <h2>Como está meu atendimento?</h2>
+
+    Dê uma avaliação para meu atendimento:
+    <select id="selEstrela">
+        <option value="*">Dê uma avaliação</option>
+        <option value="1">1 estrela</option>
+        <option value="2">2 estrelas</option>
+        <option value="3">3 estrelas</option>
+        <option value="4">4 estrelas</option>
+        <option value="5">5 estrelas</option>
+    </select>
+
+    <button onclick="avaliacao()">Confirmar avaliação</button><br><br>
+
+    <div id="res">
+        Média atual: <b id="estrelas">0</b> estrelas <br>
+        Número de avaliações: <b id="avaliacoes">0</b>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var nAval = 0
+    var aux_media = 0
+
+    function avaliacao(){
+        var aval = Number(selEstrela.value)
+
+        nAval += 1
+        aux_media += aval
+        media = aux_media / nAval
+                
+        estrelas.innerHTML = `${media.toFixed(2)}`
+        avaliacoes.innerHTML = `${nAval}`    
+        
+    }
+</script>

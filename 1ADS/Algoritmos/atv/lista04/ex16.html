@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 16 - Lista 04</h1>
+    Digite a distância da pizzaria até sua casa em km: <input type="text" id="iptDistancia">
+    <button onclick="verificar()">Verificar disponibilidade</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var distancia = Number(iptDistancia.value);
+
+        if(distancia >= 25) {
+            res.innerHTML = `${distancia}km. A Pizza Rãti não entrega neste endereço! `
+        } else if(distancia > 5){
+            res.innerHTML = `${distancia}km. A sua pizza será entregue, porém o valor de entrega é de R$ 25,00`
+        } else {
+            res.innerHTML = `${distancia}km. A sua pizza será entregue e não custará nada para você :)`
+        }
+    }
+</script>

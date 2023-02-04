@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 - Lista 03</title>
+</head>
+<body>
+    <h1>Exercício 08 - Lista 03</h1>
+    Digite a quantidade de homens que entraram no elevador <input type="text" id="man"><br>
+    Digite a quantidade de mulheres que entraram no elevador <input type="text" id="woman">
+    <button onclick="calcPeso()">Analisar Peso</button>
+
+    <div id="res"></div>
+
+</body>
+</html>
+<script>
+    function calcPeso() {
+        homem = Number(man.value)
+        mulher = Number(woman.value)
+        total = (homem * 80) + (mulher * 60)
+
+        res.innerHTML = `<br>Este elevador suporta 800kg e o peso estimado desta lotação é de ${total}kg`
+
+        if(total > 800) {
+            res.innerHTML += `<p style='color: blue;'>Será necessário descer alguém para que o elevador se movimente</p>`
+        }
+    }
+</script>

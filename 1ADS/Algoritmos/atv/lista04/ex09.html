@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09 - else if</title>
+</head>
+<body>
+    <h1>Exercício 09 - else if</h1>
+    Digite o valor do saldo <input type="text" id="iptSaldo">
+    <button onclick="verSaldo()">Veja sua situação</button>
+
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function verSaldo() {
+        var saldo = Number(iptSaldo.value)
+
+        res.innerHTML = '<br>'
+
+        if(saldo < 0) {
+            res.innerHTML += `O seu saldo é R$${saldo.toFixed(2)}, sua situação é <b>devedor</b>😭`
+        } else if(saldo <= 2000) {
+            res.innerHTML += `O seu saldo é R$${saldo.toFixed(2)}, sua situação é <b>normal</b>😐`
+        } else if(saldo <= 5000) {
+            res.innerHTML += `O saldo é R$${saldo.toFixed(2)}, sua situação é <b>acima da média</b>😎`
+        } else {
+            res.innerHTML += `O seu saldo é R$${saldo.toFixed(2)}, sua situação é <b>investidor</b>💰`
+        }
+    }
+</script>

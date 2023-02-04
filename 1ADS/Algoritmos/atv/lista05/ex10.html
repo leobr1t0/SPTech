@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 10 - Lista 05</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/1499/1499956.png" id="icon" alt="Gundam icon"> <br>
+    Selecione um tamanho para redimenisonar a imagem: 
+    
+    <select id="selTamanho">
+        <option value="">Selecione um tamanho</option>
+        <option value="512">Normal</option>
+        <option value="50">Grande</option>
+        <option value="300">Enorme</option>
+        <option value="-50">Pequeno</option>
+        <option value="-100">Minúsculo</option>
+    </select>
+    <button onclick="redimensionar()">Redimensionar imagem</button>
+</body>
+</html>
+<script>
+    var padrao = 512
+
+    function redimensionar() {
+        var tamanho = Number(selTamanho.value)
+        
+        if(tamanho != '512') {
+            tamanho += padrao
+            icon.style.width = `${tamanho}px`
+        } else {
+            icon.style.width = `${padrao}px`
+            tamnho = padrao
+        }       
+    }
+</script>

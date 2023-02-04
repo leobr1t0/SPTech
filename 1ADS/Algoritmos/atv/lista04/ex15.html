@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15 - Lista 04</title>
+</head>
+
+<body>
+    <h1>Exercício 15 - Lista 04</h1>
+    Digite um ano: <input type="text" id="iptAno">
+    <button onclick="exibir()">Ver fato</button><br><br>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function exibir() {
+        var ano = Number(iptAno.value);
+
+        if (ano < 1965) {
+            res.innerHTML = `No ano ${ano} o email nem havia sido criado ainda `
+        } else if (ano == 1965) {
+            res.innerHTML = `No ano ${ano} o email estava sendo criado`
+        } else if (ano <= 1969) {
+            res.innerHTML = `No ano ${ano} o email já havia sido criado`
+        } else {
+            res.innerHTML = `No ano ${ano} o email já havia sido aprimorado - Poderia ser enviado para outro computador`
+        }
+    }
+</script>

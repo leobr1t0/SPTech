@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 02 - Lista 04</h1>
+    Digite a sua renda familiar mensal: <input type="text" id="iptRenda">
+    <button onclick="verificar()">Analisar renda</button>
+
+    <div id="res">Verifique sua renda</div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var renda = Number(iptRenda.value)
+
+        res.innerHTML = `<br>`
+
+        if(renda < 250){
+            res.innerHTML += `Sua renda é ${renda}, você pertence a <b>Classe E</b>`
+        } else if(renda <= 900) {
+            res.innerHTML += `Sua renda é ${renda}, você pertence a <b>Classe D</b>`
+        } else  if(renda <= 2500) {
+            res.innerHTML += `Sua renda é ${renda}, você pertence a <b>Classe C</b>`
+        } else if(renda <= 9500) {
+            res.innerHTML += `Sua renda é ${renda}, você pertence a <b>Classe B</b>`
+        } else {
+            res.innerHTML += `Sua renda é ${renda}, você pertence a <b>Classe A</b>`
+        }
+
+    }
+</script>

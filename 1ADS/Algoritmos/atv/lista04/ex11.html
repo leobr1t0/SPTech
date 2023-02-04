@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 11 - Lista 04</h1>
+    Você já clicou <span id="countClick">0</span> vezes
+    <button onclick="clicar()">Clica neu</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    var count = 0;
+    function clicar() {
+        count ++;
+        
+        countClick.innerHTML = count;
+
+        if(count < 5) {
+            res.innerHTML = `Clicou ${count} vezes. Dedo fraquinho, hein`
+        } else if(count <= 10 ) {
+            res.innerHTML = `Clicou ${count} vezes. Dedo bom, mano`
+        } else if(count <= 15) {
+            res.innerHTML = `Clicou ${count} vezes. Gosta de clicar, hein!`
+        } else {
+            res.innerHTML = `Clicou ${count} vezes. Eita dedo nervoso!`
+
+        }
+
+    }
+</script>

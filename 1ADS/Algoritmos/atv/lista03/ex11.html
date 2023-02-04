@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 - Lista 03</title>
+</head>
+<body>
+    <h1>Exercício 11 - Lista 03</h1>
+    Digite a frequência do aluno: <input type="text" id="iptFrequencia"><br>
+    <button onclick="analisar()">Analisar Frequência</button><br><br>
+    <span id="freq"></span><br>
+    <img src="" id="imgFreq" style="width: 200px">
+</body>
+</html>
+<script>
+    function analisar() {
+        var frequencia = Number(iptFrequencia.value);
+
+        if(frequencia < 50) {
+            freq.innerHTML = `Frequência: ${frequencia}`
+            imgFreq.src = "https://img.freepik.com/fotos-gratis/turista-com-o-polegar-para-cima_1368-7035.jpg?w=826&t=st=1675034202~exp=1675034802~hmac=d98d63fd31eff89c1230f8f8851f3dfd1a5fc248b01414be1ded5d11fc28bbe0"
+        } else {
+            freq.innerHTML = `Frequência: ${frequencia}`
+            imgFreq.src = "https://media.gazetadopovo.com.br/2017/08/298e8518ba6191db012724dad7d52bab-gpLarge.jpg"
+
+        }
+    }
+</script>
+

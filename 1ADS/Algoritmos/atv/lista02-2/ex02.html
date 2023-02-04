@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02 - Lista 02 - 2</title>
+</head>
+<body>
+    <h1>Exercício 02 - Lista 02 - 2</h1>
+    Digite o raio da circunferência: <input type="text" id="iptRaio">
+    <button onclick="calcular()">Calcular Área</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var raio = Number(iptRaio.value);
+        var pi = 3.14;
+        var circ = 2*pi*raio;
+
+        res.innerHTML = `A medida da circunferência é ${circ.toFixed(2)}`;
+    }
+</script>
+

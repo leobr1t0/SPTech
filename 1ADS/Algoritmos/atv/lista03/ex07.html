@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista 03</title>
+</head>
+<body>
+    <h1>Exercício 07 - Lista 03</h1>
+    Digite o saldo da conta: <input type="text" id="iptSaldoConta"><br>
+    Digite o valor do débito: <input type="text" id="iptValorDebito"><br>
+    <button onclick="analisar()">Analisar conta</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var saldo = Number(iptSaldoConta.value);
+        var debito = Number(iptValorDebito.value);
+        var novoValor = saldo - debito;
+
+        if(novoValor < 0) {
+            res.innerHTML = `<b><span style="color: red;">O saldo atual da conta corrente é de R$${novoValor.toFixed(2)}</span></b>`
+        } else {
+            res.innerHTML = `O saldo atual da conta corrente é de R$${novoValor.toFixed(2)}`
+        }
+
+    }
+</script>

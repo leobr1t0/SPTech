@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 03 - Lista 05</h1>
+    Selecione uma opção: 
+    <select id="selOpt1">
+        <option value="Selecione uma opção">Selecione uma opção</option>
+        <option value="Uma vez...">Uma vez</option>
+        <option value="Num belo dia...">Num belo dia</option>
+        <option value="Numa noite chuvosa...">Numa noite chuvosa</option>   
+    </select>
+    <br><br>
+    Selecione outra opção:
+    <select id="selOpt2">
+        <option value="Selecione outra opção">Selecione outra opção</option>
+        <option value="Um peixe morreu afogado">Um peixe morreu afogado</option>
+        <option value="Um gato tomou banho">Um gato tomou banho</option>
+        <option value="Um corvo se curvou">Um corvo se curvou</option>
+    </select>
+
+    <button onclick="juntarOpcao()">Juntar opções</button>
+</body>
+</html>
+<script>
+    function juntarOpcao(){
+        opt1 = selOpt1.value
+        opt2 = selOpt2.value
+        alert(`${opt1} ${opt2}`)
+    }
+</script>

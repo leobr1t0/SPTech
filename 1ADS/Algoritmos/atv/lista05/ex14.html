@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 14 - Lista 05</h1>
+    Digite o sabor da pizza: <input type="text" id="iptSabor" autofocus><br><br>
+
+    Escolha um ingrediente para pizza:
+    <select id="selIngrediente1">
+        <option value="">Selecione um ingrediente</option>
+        <option value="8.00">Queijo</option>
+        <option value="7.50">Presunto</option>
+        <option value="10.00">Ovo</option>
+        <option value="11.00">Palmito</option>
+        <option value="12.00">Frango</option>
+        <option value="5.00">Catupiry</option>
+    </select><br><br>
+
+    Escolha outro ingrediente para pizza:
+    <select id="selIngrediente2">
+        <option value="">Selecione um ingrediente</option>
+        <option value="8.00">Queijo</option>
+        <option value="7.50">Presunto</option>
+        <option value="10.00">Ovo</option>
+        <option value="11.00">Palmito</option>
+        <option value="12.00">Frango</option>
+        <option value="5.00">Catupiry</option>
+    </select><br><br>
+
+    Escolha outro ingrediente para pizza:
+    <select id="selIngrediente3">
+        <option value="">Selecione um ingrediente</option>
+        <option value="8.00">Queijo</option>
+        <option value="7.50">Presunto</option>
+        <option value="10.00">Ovo</option>
+        <option value="11.00">Palmito</option>
+        <option value="12.00">Frango</option>
+        <option value="5.00">Catupiry</option>
+    </select>
+    <button onclick="calcular()">Calculpar preço da pizza</button>
+    <div id="res">Veja o preço de sua pizza abaixo</div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var sabor = iptSabor.value
+        var ingrediente1 = Number(selIngrediente1.value)
+        var ingrediente2 = Number(selIngrediente2.value)
+        var ingrediente3 = Number(selIngrediente3.value)
+        var total = ingrediente1 + ingrediente2 + ingrediente3
+
+        res.innerHTML = `<br><u>A pizza de <b>${sabor}</b> vai custar um total de R$ <b>${total.toFixed(2)}</b></u>`
+    }
+</script>

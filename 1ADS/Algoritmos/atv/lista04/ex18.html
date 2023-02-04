@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 18 - Lista 04</h1>
+    Digite o tipo do produto: <input type="text" id="iptTipoProduto"><br>
+    Digite a área do mercado: <input type="text" id="iptAreaMercado"><br>
+    <button onclick="analisar()">Analisar</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var tipo = (iptTipoProduto.value).toLowerCase();
+        var area = (iptAreaMercado.value).toLowerCase();
+        console.log(tipo, area)
+
+        res.innerHTML = '';
+
+        if(tipo != 'cereais' && tipo != 'queijos') {
+            alert('Só aceitamos no campo "tipo" Cereais e Queijos. Tente novamente');
+        } else if(area != 'refrigerada' && area != 'seca') {
+            alert('Só aceitamos no campo "área" Refrigerada e Seca. Tente novamente');
+        } else {
+            if(tipo == 'cereais' && area == 'refrigerada') {
+                res.innerHTML = "Ops... aí não vai rolar, retire o cereal da geladeira";
+            } else if(tipo == 'cereais' && area == 'seca') {
+                res.innerHTML = "Muito bem, agora sim o cereal está no lugar certo";
+            } else if(tipo == 'queijos' && area == 'refrigerada') {
+                res.innerHTML = "Muito bem, queijos no lugar certo. Tô gostando de ver!!!";
+            } else if(tipo == 'queijos' && area == 'seca') {
+                res.innerHTML = "Xiiii errouuu..... Ponha o queijo na geladeira";
+            }
+        }
+    }
+</script>

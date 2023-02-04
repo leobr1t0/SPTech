@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 04 - Lista 04</h1>
+    Digite o peso da criança: <input type="text" id="iptPeso">
+
+    <button onclick="aval()">Avaliar peso</button>
+    <div id="res">Avalie seu peso abaixo</div>
+</body>
+</html>
+<script>
+    function aval() {
+        var peso = Number(iptPeso.value)
+
+        if(peso == 18.3) {
+            res.innerHTML = `O seu peso é ${peso}, peso perfeito`
+        } else if(peso > 21.2) {
+            res.innerHTML = `O seu peso é ${peso}, acima do peso`
+        } else if(peso > 13.5) {
+            res.innerHTML = `O seu peso é ${peso}, peso na média`
+        } else {
+            res.innerHTML = `O seu peso é ${peso}, abaixo do peso`
+        }
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 04 - Lista 05</h1>
+    Selecione um trecho da oração:
+    <select id="selTrecho" onchange="verTrecho()">
+        <option value="Selecione um trecho">Selecione um trecho</option>
+        <option value="Que eu leve amor">Onde houver ódio</option>
+        <option value="Que eu leve a esperança">Onde houver desespero</option>
+        <option value="Que eu leve o perdão">Onde houver ofensa</option>
+        <option value="Que eu leve a união">Onde houver discórdia</option>
+    </select>
+</body>
+</html>
+<script>
+    function verTrecho() {
+        var trecho = selTrecho.value
+        alert(trecho)
+    }
+</script>

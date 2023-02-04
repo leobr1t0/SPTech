@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17 - Lista 04</title>
+    <link rel="stylesheet" href="styleEx17.css">
+</head>
+
+<body>
+    <h1>Exercício 17 - Lista 04</h1>
+    <div class="inicio" id="inicio">
+        <div class="inputWrapper">
+            Digite o nome do 1° personagem: <input type="text" id="iptNomePersonagem1">
+            Cole a url da imagem do 1° personagem: <input type="text" id="iptUrlPersonagem1"><br>
+        </div>
+        <div class="inputWrapper">
+            Digite o nome do 2° personagem: <input type="text" id="iptNomePersonagem2">
+            Cole a url da imagem do 2° personagem: <input type="text" id="iptUrlPersonagem2"><br>
+        </div>
+        <button onclick="jogar()">Jogar</button>
+    </div>
+    <div class="containerGame" id="containerGame">
+        <div class="personagem">
+            <h2 id="nomePersonagem1"></h2>
+            <img src="img/vegetaIcon.jpg" alt="" id="personagem1Photo">
+            <div id="vida1"></div>
+            <div class="wrapper">
+                <button onclick="apanhar1()" id="apanhar1">Apanhar</button>
+            </div>
+        </div>
+        <img src="img/vsImage.png" alt="">
+        <div class="personagem">
+            <h2 id="nomePersonagem2"></h2>
+            <img src="img/gokuIcon.jpg" alt="" id="personagem2Photo">
+            <div id="vida2"></div>
+            <div class="wrapper">
+                <button onclick="apanhar2()" id="apanhar2">Apanhar</button>
+            </div>
+        </div>
+    </div>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    var personagem1 = '';
+    var personagem2 = '';
+    var urlChar1 = '';
+    var urlChar2 = '';
+    var vidaChar1 = 0;
+    var vidaChar2 = 0;
+    var morte1 = false;
+    var morte2 = false;
+
+    function jogar() {
+        var erro = false;
+        morte1 = false;
+        morte2 = false;
+        vidaChar1 = 300;
+        vidaChar2 = 300;
+        vida1.style.width = `${vidaChar1}px`;
+        vida2.style.width = `${vidaChar2}px`;
+        urlChar1 = iptUrlPersonagem1.value;
+        urlChar2 = iptUrlPersonagem2.value;
+        personagem1 = iptNomePersonagem1.value;
+        personagem2 = iptNomePersonagem2.value;
+        nomePersonagem1.innerHTML = personagem1;
+        nomePersonagem2.innerHTML = personagem2;
+
+        if (iptNomePersonagem1.value == '') {
+            var erro = true;
+            alert('Coloque um nome para o personagem 1');
+        }
+
+        if (iptNomePersonagem2.value == '') {
+            var erro = true;
+            alert('Coloque um nome para o personagem 2');
+        }
+
+        if (Number(personagem1)) {
+            var erro = true;
+            alert('Coloque um nome para o personagem 1 válido');
+        }
+
+        if (Number(personagem2)) {
+            var erro = true;
+            alert('Coloque um nome para o personagem 2 válido');
+        }
+
+        if (iptUrlPersonagem1.value == '') {
+            var erro = true;
+            alert('Coloque uma url no personagem 1');
+        }
+
+        if (iptUrlPersonagem2.value == '') {
+            var erro = true;
+            alert('Coloque uma url no personagem 2');
+        }
+
+        if (erro == false) {
+            containerGame.classList.add('ativo');
+            inicio.classList.add('inativo');
+            personagem1Photo.src = urlChar1;
+            personagem2Photo.src = urlChar2;
+        }
+
+    }
+
+    function apanhar1() {
+        vidaChar1 -= 25;
+        vida1.style.width = `${vidaChar1}px`;
+        analisar();
+    }
+
+    function apanhar2() {
+        vidaChar2 -= 25;
+        vida2.style.width = `${vidaChar2}px`;
+        analisar();
+    }
+
+    function analisar() {
+
+        if (vidaChar1 == 0 && morte2 == false) {
+            personagem1Photo.src = 'img/caixao.png';
+            res.innerHTML = `${personagem2} Venceu!!<br>`
+            res.innerHTML += `<button onclick="novamente()">Jogar novamente</button>`
+            morte1 = true;
+        }
+
+        if (vidaChar2 == 0 && morte1 == false) {
+            personagem2Photo.src = 'img/caixao.png';
+            res.innerHTML = `${personagem1} Venceu!!<br>`
+            res.innerHTML += `<button onclick="novamente()">Jogar novamente</button>`
+            morte2 = true;
+        }
+    }
+
+    function novamente() {
+        containerGame.classList.remove('ativo');
+        inicio.classList.remove('inativo');
+        iptNomePersonagem1.value = '';
+        iptNomePersonagem2.value = '';
+        iptUrlPersonagem1.value = '';
+        iptUrlPersonagem2.value = '';
+        res.innerHTML = '';
+    }
+</script>

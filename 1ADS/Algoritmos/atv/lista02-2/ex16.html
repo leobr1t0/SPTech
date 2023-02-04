@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 - Lista 02 - 2</title>
+</head>
+<body>
+    <h1>Exercício 16 - Lista 02 - 2</h1>
+    <button onclick="quatroIngressos()">4 ingressos</button>
+    <button onclick="seisIngressos()">6 ingressos</button>
+    <button onclick="oitoIngressos()">8 ingressos</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function quatroIngressos() {
+        var preco4Ing = (32 / 48) * 100;
+        res.innerHTML = `Após comprar 4 ingressos você gastará ${preco4Ing.toFixed(2)}% a menos.`
+    }
+    
+    function seisIngressos() {
+        var preco6Ing = (42 / 72) * 100;
+        res.innerHTML = `Após comprar 6 ingressos você gastará ${preco6Ing.toFixed(2)}% a menos.`
+
+    }
+
+    function oitoIngressos() {
+        var preco8Ing = (48 / 96) * 100;   
+        res.innerHTML = `Após comprar 8 ingressos você gastará ${preco8Ing.toFixed(2)}% a menos.`   
+    }
+</script>

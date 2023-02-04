@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos CNH</title>
+</head>
+<body>
+    <h1>Pontos CNH</h1>
+    Digite a quantidade de pontos na CNH <input type="text" id="cnh">   
+    <button onclick="verificar()">Verificar</button>
+    <div id="res">Verificar CNH</div>
+</body>
+</html>
+<script>
+    function verificar() {
+        if(cnh.value >= 20) {
+            res.innerHTML = 'Carteira Suspensa'
+            multa = cnh.value * 87
+        } else {
+            multa = cnh.value * 78
+        }
+
+        res.innerHTML += `<br> Você está com R$ ${multa.toFixed(2)} de multa `
+
+    }
+</script>

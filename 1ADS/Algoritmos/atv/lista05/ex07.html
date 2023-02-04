@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 07 - Lista 05</h1>
+    Selecione um time:
+    <select id="selTime" onchange="verTime()">
+        <option value="Selecione um time">Selecione um time</option>
+        <option value="corinthians">Corinthians</option>
+        <option value="são paulo">São Paulo</option>
+        <option value="palmeiras">Palmeiras</option>
+        <option value="flamengo">Flamengo</option>
+    </select><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function verTime() {
+        var time = selTime.value
+        if(time == 'corinthians') {
+            res.innerHTML = `Você selecionou <b>${time}</b><br>`
+            res.innerHTML += '<img style="width: 250px;" src="https://upload.wikimedia.org/wikipedia/pt/b/b4/Corinthians_simbolo.png">'
+        } else if(time == 'são paulo') {
+            res.innerHTML = `Você selecionou <b>${time}</b><br>`
+            res.innerHTML += '<img style="width: 250px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1200px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png">'
+        } else if(time == 'palmeiras') {
+            res.innerHTML = `Você selecionou <b>${time}</b><br>`
+            res.innerHTML += '<img style="width: 250px;" src="https://a.espncdn.com/i/teamlogos/soccer/500/2029.png">'
+        } else if(time == 'flamengo') {
+            res.innerHTML = `Você selecionou <b>${time}</b><br>`
+            res.innerHTML += '<img style="width: 250px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flamengo_braz_logo.svg/1655px-Flamengo_braz_logo.svg.png">'
+        } else {
+            alert('Selecione um time válido')
+            res.innerHTML = ''
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 14 - Lista 04</h1>
+    Digite quantas partidas o atacante jogou: <input type="text" id="iptNumPartidas"><br>
+    Digite quantos gols ele marcou: <input type="text" id="iptGolsMarcados"><br>
+    <button onclick="analisar()">Estudar atacante</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var partidas = Number(iptNumPartidas.value);
+        var gols = Number(iptGolsMarcados.value);
+        var media = gols / partidas;
+
+        if(media < 0.2) {
+            res.innerHTML = `Sua média de gols/partida é ${media}. Melhor mudar de posição 😭`
+        } else if(media < 0.6) {
+            res.innerHTML = `Sua média de gols/partida é ${media}. Atacante mediano 😐`
+        } else if(media > 0.6) {
+            res.innerHTML = `Sua média de gols/partida é ${media}. Atacante de futuro 😁`
+        }
+
+    }
+</script>

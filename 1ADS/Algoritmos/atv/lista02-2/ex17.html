@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17 - Lista 02 - 2</title>
+</head>
+<body>
+    <h1>Exercício 17 - Lista 02 - 2</h1>
+    Time A - <span id="ptsTimeA">0</span> : <span id="ptsTimeB">0</span> Time B <br><br>
+    Registrar pontos time A: <input type="text" id="iptPtsTimeA">
+    <button onclick="adicionarPontosA()">Adicionar Pontos</button><br><br>
+    Registrar pontos time B: <input type="text" id="iptPtsTimeB">
+    <button onclick="adicionarPontosB()">Adicionar Pontos</button><br><br>
+    <button onclick="recomecar()">Recomeçar</button>
+</body>
+</html>
+<script>
+    var pontosA = 0;
+    var pontosB = 0;
+
+    function adicionarPontosA() {
+        var ptsAddA = Number(iptPtsTimeA.value);
+        pontosA += ptsAddA;
+        ptsTimeA.innerHTML = pontosA;
+        iptPtsTimeA.value = '';
+    }
+
+    function adicionarPontosB() {
+        var ptsAddB = Number(iptPtsTimeB.value);
+        pontosB += ptsAddB;
+        ptsTimeB.innerHTML = pontosB;
+        iptPtsTimeB.value = '';
+    }
+
+    function recomecar() {
+        pontosA = 0;
+        pontosB = 0;
+        ptsTimeA.innerHTML = pontosA;
+        ptsTimeB.innerHTML = pontosB;
+    }
+</script>

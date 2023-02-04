@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 01 - Lista 04</h1>
+    Digite sua altura <input type="text" id="iptAltura">
+    <button onclick="verAltura()">Analisar</button>
+
+    <div id="res">Veja se você tem uma boa altura para praticar</div>
+</body>
+</html>
+<script>
+    function verAltura(){
+        var altura = Number(iptAltura.value)
+
+        res.innerHTML = `<br>`
+
+        if(altura <= 1.65) {
+            res.innerHTML = `A sua altura é ${altura.toFixed(2)}, você pode ser piloto de corrida! 🏁`
+        } else if(altura <= 1.8) {
+            res.innerHTML = `A sua altura é ${altura.toFixed(2)}, você pode ser jogador de futebol! ⚽`
+        } else {
+            res.innerHTML = `A sua altura é ${altura.toFixed(2)}, você pode jogador de volei ou basquete! ⛹️‍♀️`
+        }
+    }
+</script>

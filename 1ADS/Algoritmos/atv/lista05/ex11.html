@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 11 - Lista 05</h1>
+    Digite o seu salário: <input type="text" id="iptSalario"><br><br>
+
+    Escolha uma opção de desconto: 
+    <select id="selDesc">
+        <option value="">Selecione uma opção</option>
+        <option value="inss">INSS</option>
+        <option value="ir">IR</option>
+        <option value="vt">VT</option>
+    </select>
+    <button onclick="desconto()">Ver deconto</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function desconto() {
+        var salario = Number(iptSalario.value)
+        var opcao = selDesc.value
+
+        if(opcao == 'inss') {
+            salario *= 0.10
+        } else if(opcao == 'ir') {
+            salario *= 0.20
+        } else if(opcao == 'vt') {
+            salario *= 0.05
+        } else {
+            alert('Escolha uma opção válida')
+        }
+
+        res.innerHTML = ` Você selecionou a opção "<b>${opcao}</b>", portanto o <br>
+                          valor desse desconto é: R$ <b>${salario.toFixed(2)}</b>`
+    }
+</script>

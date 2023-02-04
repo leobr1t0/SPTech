@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <h1>Exercício 02 - Lista 03</h1>
+    Quantas latinhas de refri você toma por dia? <input type="text" id="refri">
+    <button onclick="verificarRefri()">Quantos refris?</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function verificarRefri() {
+        var latinhas = refri.value  * 365
+
+        res.innerHTML += `Você tomou ${latinhas} latinhas por ano`
+
+        if(latinhas > 500){
+            res.innerHTML += ` cuidado com a diabetes! <br>`
+        } 
+    }
+</script>

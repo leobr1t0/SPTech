@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14 - Lista 03</title>
+</head>
+<body>
+    <h1>Exercício 14 - Lista 03</h1>
+    Digite o valor por grama de sorvete <input type="text" id="vGrama"><br>
+    Digite o peso do sorvete (gramas) <input type="text" id="pesoSorvete"><br>
+    Digite o tipo da cobertura <input type="text" id="cobertura">
+    <button onclick="verificarPreco()">Calcular preço</button>
+
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function verificarPreco() {
+        var precoGrama = Number(vGrama.value)
+        var peso = Number(pesoSorvete.value)
+        var cober = cobertura.value
+
+        if(cober != 'Chocolate') {
+            total = (precoGrama + 0.005) * peso
+        } else {
+            total = peso * precoGrama
+        }
+        
+        if(total > 10) {
+            res.innerHTML = `Você gastou R$ ${total.toFixed(2)} no sorvete, vai comprometer a mesada`
+        } else {
+            res.innerHTML = `Você gastou R$ ${total.toFixed(2)} no sorvete, hoje você está manerando`
+        }
+    }
+</script>

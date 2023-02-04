@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 09 - Lista 05</h1>
+    Selecione um hobby:
+    <select id="selHobby">
+        <option value="">Selecione um hobby</option>
+        <option value="https://cdn-icons-png.flaticon.com/512/2410/2410375.png">Dança</option>
+        <option value="https://cdn-icons-png.flaticon.com/512/2780/2780137.png">Vídeo Game</option>
+        <option value="https://cdn-icons-png.flaticon.com/512/4221/4221941.png">Assistir TV</option>
+        <option value="https://cdn-icons-png.flaticon.com/512/2829/2829075.png">Ouvir Rock</option>
+    </select><br><br>
+
+    Selecione a quantidade de vezes que pratica o hobby:
+    <select id="selTamanho">
+        <option value="">Selecione um número</option>
+        <option value="50px">1</option>
+        <option value="100px">2</option>
+        <option value="140px">3</option>
+        <option value="190px">4</option>
+        <option value="260px">5</option>
+        <option value="300px">6</option>
+    </select>
+
+    <button onclick="verHobby()">Ver Hobby</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function verHobby() {
+        var hobby = selHobby.value
+        var tamanho = selTamanho.value
+
+        res.innerHTML = `<img style="width:${tamanho}" src="${hobby}">`
+    }
+</script>

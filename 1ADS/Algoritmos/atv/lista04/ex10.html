@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 10 - Lista 04</h1>
+    Digite o mês do ano <input type="text" id="iptMes">
+    <button onclick="verificar()">Exibir</button>
+    
+    <div id="res">Verificar estação</div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var mes = iptMes.value
+
+        res.innerHTML = '<br>'
+        
+        if(mes == 'março') {
+            res.innerHTML += `Mes: ${mes} - Estação: Outono <br> 
+            <img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg">`  
+        } else if(mes == 'abril') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Outono <br> 
+            <img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg">`
+        } else if(mes == 'maio') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Outono <br> 
+            <img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg">`
+        } else if(mes == 'junho') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Inverno <br>
+            <img src="https://static.escolakids.uol.com.br/2020/07/frio-extremo.jpg">`
+        } else if(mes == 'julho') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Inverno <br>
+            <img src="https://static.escolakids.uol.com.br/2020/07/frio-extremo.jpg">`
+        } else if(mes == 'agosto') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Inverno <br>
+            <img src="https://static.escolakids.uol.com.br/2020/07/frio-extremo.jpg">`
+        } else if(mes == 'setembro') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Primavera <br>
+            <img src="https://www.infoescola.com/wp-content/uploads/2008/10/primavera.jpg">`
+        } else if(mes == 'outubro') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Primavera <br>
+            <img src="https://www.infoescola.com/wp-content/uploads/2008/10/primavera.jpg">`
+        } else if (mes == 'novembro') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Primavera <br>
+            <img src="https://www.infoescola.com/wp-content/uploads/2008/10/primavera.jpg">`
+        } else if (mes == 'dezembro') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Verão <br>
+            <img src="https://www.infoescola.com/wp-content/uploads/2008/10/verao.jpg">`
+        } else if(mes == 'janeiro') {
+            res.innerHTML += `Mes: ${mes} - Estação:  Verão <br>
+            <img src="https://www.infoescola.com/wp-content/uploads/2008/10/verao.jpg">`
+        } else {
+            res.innerHTML += `Mes: ${mes} - Estação:  Verão <br>
+            <img src="https://www.infoescola.com/wp-content/uploads/2008/10/verao.jpg">`
+        }
+    }
+</script>
+

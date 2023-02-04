@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 - Lista 02 - 2</title>
+</head>
+<body>
+    <h1>Exercício 13 - Lista 02 - 2</h1>
+    O dobro de <span id="spNum1">1</span> é <span id="spNum2">2</span><br>
+    <button onclick="dobrar()">Dobrar</button>
+</body>
+</html>
+<script>
+    var num1 = 1;
+    var num2 = 2;
+    function dobrar() {
+        num1 *= 2;
+        num2 *= 2;
+        spNum1.innerHTML = num1;
+        spNum2.innerHTML = num2;
+    }
+</script>
+
+

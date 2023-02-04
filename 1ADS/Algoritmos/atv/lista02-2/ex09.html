@@ -10,35 +10,36 @@
 
 <body>
     <h1>Exercicio 09 - Lista 02 - 2</h1>
-    <label for="infec">Digite quantas pessoas estão infectadas:</label>
-    <input type="text" id="infec"><br><br>
 
-    <button onclick='ontem()'>Infectados ontem</button>
-    <button onclick='amanha()'>Infectados amanhã</button>
-    <button onclick='mes()'>Infectados em 1 mes</button>
+    <button onclick="oito()">08 passagens</button>
+    <button onclick="vinte()">20 passagens</button>
+    <button onclick="cinquenta()">50 passagens</button>
 
-    <div id="res">Resultado</div>
-
+    <div id="res"></div>
 </body>
 
 </html>
 
 <script>
-    function ontem() {
-        var infecOntem = Number(infec.value - 35);
+    function oito() {
 
-        res.innerHTML =`<br> Ontem haviam ${infecOntem} pessoas infectadas`;
+        var desc = (100 - ((32.42 / 35.20) * 100));
+        var bns = ((35.20 - 32.42) / 4.40);
+
+        res.innerHTML = `Ao comprar 08 passagens, você pagou ${desc.toFixed(0)}% a menos. É como se tivesse ganhado ${bns.toFixed(0)} passagens de "bônus".`
     }
 
-    function amanha() {
-        var infecAmanha = (Number(infec.value) + 35);
-
-        res.innerHTML = `<br> Amanhã haverão ${infecAmanha} pessoas infectadas`
+    function vinte() {
+        var desc20 = (100 - ((78.65 / 88) * 100));
+        var bns20 = ((88 - 78.65) / 4.40);
+        
+        res.innerHTML = `Ao comprar 20 passagens, você pagou ${desc20.toFixed(0)}% a menos. É como se tivesse ganhado ${bns20.toFixed(0)} passagens de "bônus".`
     }
 
-    function mes() {
-        var infecMes = (Number(infec.value) + (30 * 35));
+    function cinquenta() {
+        var desc50 = (100 - ((191.41 / 220) * 100));
+        var bns50 = ((220 - 191.41) / 4.40);
 
-        res.innerHTML = `<br> Daqui a 1 mês haverão ${infecMes} pessoas infectadas`
+        res.innerHTML = `Ao comprar 50 passagens, você pagou ${desc50.toFixed(0)}% a menos. É como se tivesse ganhado ${bns50.toFixed(0)} passagens de "bônus".`
     }
 </script>

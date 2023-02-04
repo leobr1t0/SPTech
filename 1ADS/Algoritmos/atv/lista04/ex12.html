@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 12 - Lista 04</h1>
+    Valor guardado: R$ <span id="guardado">0,00</span>
+    <button onclick="guardarCinco()">Guardar 5,00</button>
+    <button onclick="gastarDez()">Gastar 10,00</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    var saldo = 0;
+    
+    res.innerHTML = ''
+    function guardarCinco() {
+        saldo += 5;
+        guardado.innerHTML = saldo;
+        analisar();
+    }
+    
+    function gastarDez() {
+        saldo -= 10;
+        guardado.innerHTML = saldo;
+        analisar();
+    }
+
+    function analisar() {
+        if(saldo >= 0) {
+            res.innerHTML = `<span style="color: blue;">Finanças OK!</span>`;
+        }
+        
+        if(saldo > 100) {
+            res.innerHTML += `<br>#ostentação`;
+        }
+        
+        if(saldo < 0) {
+            res.innerHTML = `<span style="color: red;">Finanças em perigo!</span>`;
+        }
+        
+        if(saldo < -20) {
+            res.innerHTML += `<br>Quase um Corinthians`;
+        }
+    }
+
+
+</script>

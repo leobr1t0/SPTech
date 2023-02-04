@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Lista 05</title>
+</head>
+<body>
+    <h1>Exercício 01 - Lista 05</h1>
+    Escolha um produto: 
+    <select id="selProduto" onchange="verPreco()">
+        <option value="Selecione um produto da lista">Escolha um produto</option>
+        <option value="O leite custa R$ 5,60">Leite</option>
+        <option value="A farinha custa R$ 4,00">Farinha</option>
+        <option value="O pão custa R$ 1,00">Pão</option>
+        <option value="Os ovos custam R$ 10,00">Ovos</option>
+    </select>
+</body>
+</html>
+<script>
+    function verPreco() {
+        var produto = selProduto.value
+        alert(produto)
+    }
+</script>   

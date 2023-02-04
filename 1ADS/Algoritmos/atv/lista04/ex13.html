@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 13 - Lista 04</h1>
+    <button onclick="nota1()">Nota1</button>
+    <button onclick="nota2()">Nota2</button>
+    <button onclick="nota3()">Nota3</button>
+    <button onclick="nota4()">Nota4</button>
+    <button onclick="nota5()">Nota5</button><br><br>
+    Sua avaliação: <span id="aval">0</span>
+</body>
+</html>
+<script>
+    var qtd = 0;
+    var media = 0;
+    var soma = 0;
+
+    function nota1() {
+        qtd++;
+        soma += 1;
+        atualizar();
+    }
+    function nota2() {
+        qtd++;
+        soma += 2;
+        atualizar();
+    }
+    function nota3() {
+        qtd++;
+        soma += 3;
+        atualizar();
+    }
+    function nota4() {
+        qtd++;
+        soma += 4;
+        atualizar();
+    }
+    function nota5() {
+        qtd++;
+        soma += 5;
+        atualizar();
+    }
+
+    function atualizar() {
+        media = soma / qtd;
+        aval.innerHTML = media.toFixed(1);
+
+        if(media < 2) {
+            aval.innerHTML += '😭';
+        } else if(media < 3) {
+            aval.innerHTML += '😐';
+        } else if(media < 4.5) {
+            aval.innerHTML += '😀';
+        } else {
+            aval.innerHTML += '😁';
+        }
+    }
+
+</script>

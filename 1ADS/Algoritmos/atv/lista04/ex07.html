@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista 04</title>
+</head>
+<body>
+    <h1>Exercício 07 - Lista 04</h1>
+    Digite a quantidade de pães consumidos por dia: <input type="text" id="iptPao"><br>
+    Digite a quantidade de bolachas consumidas por dia: <input type="text" id="iptBolacha"><br>
+    Digite a quantidade de achocolatados consumidos por dia: <input type="text" id="iptAcho">
+
+    <button onclick="verificar()">Verificar calorias</button>
+
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var pao = Number(iptPao.value)
+        var bolacha = Number(iptBolacha.value)
+        var achocolatado = Number(iptAcho.value)
+        var calorias = (pao * 50) + (bolacha * 80) + (achocolatado * 70)
+
+        if(calorias < 200) {
+            res.innerHTML = `Suas calorias diárias são de ${calorias}. Parabéns, você irá ficar em forma da quarentena!`
+        } else if (calorias <= 400) {
+            res.innerHTML = `Suas calorias diárias são de ${calorias}. Cuidado, vai ficar mais fofinho(a) após a quarentena!`
+        } else {
+            res.innerHTML = `Suas calorias diárias são de ${calorias}. Bom, acho que muitos não vão te reconhecer após a quarentena`
+        }
+
+    }
+</script>
