@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19 - Lista 08</title>
+</head>
+
+<body>
+    <h1>Exercício 19 - Lista 08</h1>
+    Digite a sua idade: <input type="text" id="iptIdade" onkeyup="exibir()">
+    
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function exibir() {
+        var idade = Number(iptIdade.value);
+
+        res.innerHTML = ''
+        for(let count = 0; count <= idade; count++) {
+            if (count >= 0 && count <= 4) {
+                res.innerHTML += `${count} anos (Primeira infância)<br>`
+            } else if (count > 4 && count <= 6) {
+                res.innerHTML += `${count} anos (Pré-escolar)<br>`
+            } else if (count > 6 && count <= 10) {
+                res.innerHTML += `${count} anos (Segunda Infância)<br>`
+            } else if (count > 10 && count <= 18) {
+                res.innerHTML += `${count} anos (Adolescência)<br>`
+            } else if (count > 18 && count <= 50) {
+                res.innerHTML += `${count} anos (Adulto)<br>`
+            } else if (count > 50 && count <= 100) {
+                res.innerHTML += `${count} anos (Melhor idade)<br>`
+            } else {
+                res.innerHTML += `${count} anos (Matusalém)<br>`
+            }
+        }
+    }
+</script>

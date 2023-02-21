@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 10 - Lista 06 - Operador E</h1>
+    <h2>Dados do processo de seleção:</h2>
+    Digite a altura inicial desejada: <input type="text" id="iptAlturaInicial"><br><br>
+    Digite a altura final desejada: <input type="text" id="iptAlturaFinal"><br><br>
+
+    <h2>Dados do piloto:</h2>
+    Digite o nome do piloto: <input type="text" id="iptNomePiloto"><br><br>
+    Digite a altura do piloto: <input type="text" id="iptAlturaPiloto"><br><br>
+
+    <button onclick="verificar()">Verificar piloto</button>
+
+    <div id="res">⬇ Veja a situação do piloto abaixo ⬇</div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var altInicial = Number(iptAlturaInicial.value)
+        var altFinal = Number(iptAlturaFinal.value)
+        var piloto = iptNomePiloto.value
+        var altPiloto = Number(iptAlturaPiloto.value)
+
+        if(altInicial > 1 && altFinal > altInicial){
+            if(altPiloto > 1 && altPiloto <= altFinal) {
+                res.innerHTML = `<br>O candidato ${piloto} com altura de ${altPiloto} metros participará do processo de seleção de piloto.`
+            } else {
+                res.innerHTML += `<br>Infelizmente o candidato ${piloto} com altura de ${altPiloto} metros não atende os requisitos`
+            }
+        } else {
+            alert('Intervalo entre alturas inválido, tente novamente!')
+        }
+    }
+</script>

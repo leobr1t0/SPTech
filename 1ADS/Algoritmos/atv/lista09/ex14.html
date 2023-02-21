@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14 - Lista 09</title>
+</head>
+<body>
+    <h1>Exercício 14 - Lista 09</h1>
+    Digite a sua altura: <input type="text" id="iptAltura"><br>
+    <button onclick="analisar()">Analisar para esportes</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() { 
+        var altura = Number(iptAltura.value);
+        var corrida = altura < 1.60
+        var velejador = altura < 1.60
+        var futhand = altura > 1.60 && altura < 1.85
+
+        res.innerHTML = ''
+
+        if(corrida) {
+            res.innerHTML += `<br>Você pode tentar ser um piloto(a) de corrida, possui ${altura}m de altura`
+        } 
+        
+        if(velejador) {
+            res.innerHTML += `<br>Você pode tentar ser um velejador(a), possui ${altura}m de altura`
+        } 
+        
+        if(futhand) {
+            res.innerHTML += `<br>Você pode tentar ser um jogador de futebol ou handebol, possui ${altura}m de altura`
+        }
+
+    }
+</script>
+

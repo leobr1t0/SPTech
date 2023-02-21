@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista 07</title>
+</head>
+<body>
+    <h1>Exercício 07 - Lista 07</h1>
+    Digite um número: <input type="text" id="iptNum">
+    <button onclick="exibir()">Adoro multiplos de 5</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        var count = 0
+        var num = Number(iptNum.value)
+        if(num <= 20) {
+            alert('O número deve ser maior que 20') 
+        } else if(num >= 100) {
+            alert('O número deve ser menor que 100')
+        } else {
+            while(count < num) {
+                count++
+                if(count % 5 == 0) {
+                    res.innerHTML += `${count}<br>`
+                }
+            }
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 06 - Lista 06 - Operador E</h1>
+    Digite a nota de um aluno: <input type="text" id="iptNota">
+    <button onclick="avaliar()">Avaliar aluno</button><br><br>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var nota = Number(iptNota.value);
+
+        if(nota < 6) {
+            alert(`Nota: ${nota} - Aluno não aprovado`);
+        } else if(nota >= 8.5 && nota <= 10) {
+            alert(`Nota: ${nota} - Aluno exemplar!`);
+        } else if(nota >= 6 && nota < 8.5) {
+            alert(`Nota: ${nota} - Aluno comum e aprovado`);
+        }
+
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 - Lista FOR</title>
+</head>
+<body>
+    <h1>Exercício 13 - Lista FOR</h1>
+    Digite quantas xícaras de café com leite já tomou na vida: <input type="text" id="qtdXicaras">
+    <button onclick="mostrar()">Ver quantidade</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        var xicLeite = '<img src="https://cdn-icons-png.flaticon.com/512/1746/1746522.png" style="width: 20px;">'
+        var xicCafe = '<img src="https://img.freepik.com/vetores-premium/cafe-em-po-em-frasco-de-vidro-com-fundo-branco_124507-9058.jpg?w=2000" style="width: 20px;">'
+        var xicaras = Number(qtdXicaras.value);
+        for(var count = 0; count <= xicaras; count++) {
+            res.innerHTML += `${xicLeite} ${xicCafe} ${xicCafe}<br>`
+        }
+        res.innerHTML += `Resulta em ${xicaras} de leite e ${xicaras * 2 } de café`
+    }
+</script>

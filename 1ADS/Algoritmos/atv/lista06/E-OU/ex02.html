@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02 - Lista 07</title>
+</head>
+
+<body>
+    <h1>Blackjack</h1>
+    Primeira carta:
+    <select id="selCarta1">
+        <option value="as">AS</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="valete">Valete</option>
+        <option value="dama">Dama</option>
+        <option value="rei">Rei</option>
+    </select><br>
+    Segunda carta:
+    <select id="selCarta2">
+        <option value="as">AS</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="valete">Valete</option>
+        <option value="dama">Dama</option>
+        <option value="rei">Rei</option>
+    </select><br>
+    <button onclick="jogar()">Jogar</button>
+</body>
+
+</html>
+<script>
+    function jogar() {
+        var carta1 = selCarta1.value
+        var carta2 = selCarta2.value
+
+        if (carta1 == 'as' && carta2 == 'valete' || carta2 == 'dama' || carta2 == 'rei' || carta2 == '10' ||
+            carta2 == 'as' && carta1 == 'valete' || carta1 == 'dama' || carta1 == 'rei' || carta1 == '10') {
+            alert('Blackjack!')
+        } else {
+            alert('Não foi dessa vez :(')
+        }
+    }
+</script>

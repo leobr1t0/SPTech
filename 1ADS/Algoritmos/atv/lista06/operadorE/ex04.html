@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 04 - Lista 06 - Operador E</h1>
+    Selecione o que você come no café da manhã:
+    <select id="selCafe">
+        <option value="">Selecione uma opção</option>
+        <option value="ovos">Ovos</option>
+        <option value="leite de arroz">Leite de arroz</option>
+        <option value="bacon">Bacon</option>
+    </select><br><br>
+    Selecione o que você come no almoço:
+    <select id="selAlmoco">
+        <option value="">Selecione uma opção</option>
+        <option value="bife">Bife</option>
+        <option value="hamburger de soja">Hamburger de soja</option>
+        <option value="frango grelhado">Frango grelhado</option>
+    </select><br><br>
+    Selecione o que você come na janta:
+    <select id="selJanta">
+        <option value="">Selecione uma opção</option>
+        <option value="picanha de soja">Picanha de soja</option>
+        <option value="cupim">Cupim</option>
+        <option value="coração">Coração</option>
+    </select>
+    <button onclick="verificar()">Sou vegano</button>
+</body>
+</html>
+<script>
+    function verificar() {
+        var cafe = selCafe.value;
+        var almoco = selAlmoco.value;
+        var janta = selJanta.value;
+
+        if(cafe == 'leite de arroz' && almoco == 'hamburger de soja' && janta == 'picanha de soja') {
+            alert('Sim, você é vegano!');
+        } else {
+            alert('Não, você não é vegano!');
+        }
+    }
+</script>

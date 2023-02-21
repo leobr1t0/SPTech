@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Desafio Banco 24h</title>
+</head>
+
+<body>
+    <h1>Banco 24h</h1>
+    <h2>Primeira fase:</h2>
+    Digite a quantidade de notas de R$ 10,00: <input type="text" id="iptNotas10"><br><br>
+    Digite a quantidade de notas de R$ 50,00: <input type="text" id="iptNotas50"><br><br>
+    Digite a quantidade de notas de R$ 100,00: <input type="text" id="iptNotas100">
+    <button onclick="iniciar()">Iniciar</button>
+
+    <h2>Segunda fase:</h2>
+    <p>As notas disponíveis são de R$ 10, 50 e 100</p><br>
+    Digite o valor que deseja sacar: <input type="text" id="iptSaque">
+    <button onclick="sacar()">Solicitar Saque</button>
+</body>
+
+</html>
+<script>
+    var qtd10 = 0
+    var qtd50 = 0
+    var qtd100 = 0
+
+    var montante = 0
+    var notas10 = 0
+    var notas50 = 0
+    var notas100 = 0
+    var valorSaque = 0
+
+    var resto = 0
+    var faltou = 0
+    var qtdNes100 = 0
+    var qtdNes50 = 0
+    var qtdNes10 = 0
+
+    function iniciar() {
+        qtd10 = Number(iptNotas10.value)
+        qtd50 = Number(iptNotas50.value)
+        qtd100 = Number(iptNotas100.value)
+
+        notas10 = qtd10 * 10
+        notas50 = qtd50 * 50
+        notas100 = qtd100 * 100
+        montante = notas10 + notas50 + notas100
+
+        // alert(montante)
+    }
+
+    function sacar() {
+        // iniciar()
+        valorSaque = Number(iptSaque.value)
+        validacao()
+        // console.log('resto:' +montante)
+
+    }
+
+    function validacao() {
+        if (valorSaque > 0) {
+            if (valorSaque <= montante) {
+                if (valorSaque % 100 != 0 && valorSaque % 50 != 0 && valorSaque % 10 != 0) {
+                    alert('Valor não possível devido às notas disponíveis')
+                } else {
+                    //sacar 100
+                    if (valorSaque >= 100) {
+                        qtdNes100 = Math.floor(valorSaque / 100)
+                        resto = valorSaque % (qtdNes100 * 100)
+                        if (qtdNes100 > qtd100) {
+                            faltou = qtdNes100 - qtd100
+                            qtdNes100 = qtd100
+                            resto = resto + (faltou * 100)
+                        }
+                        qtd100 -= qtdNes100
+
+                        // sacar somado 100 + 50
+                        if (resto >= 50) {
+                            qtdNes50 = Math.floor(resto / 50)
+                            resto = resto % (qtdNes50 * 50)
+                            qtd50 -= qtdNes50
+                        }
+
+                        // // sacar somado 100 + 10
+                        if (resto >= 10 && resto < 50 && qtd10 > 0) {
+                            qtdNes10 = Math.floor(resto / 10)
+                            resto = resto % (qtdNes10 * 10)
+                            qtd10 -= qtdNes10
+                        }
+
+                        // // sacar somado 100 + 50 + 10
+                        // if (resto >= 10 && resto < 50 && qtd50 > 0 && qtd10 > 0) {
+                        //     qtdNes10 = Math.floor(resto / 10)
+                        //     resto = resto % (qtdNes10 * 10)
+                        //     qtd10 -= qtdNes10
+                        // }
+                    }
+
+                    //transição 100 > 50
+                    if (qtd100 == 0) {
+                        qtdNes50 = Math.floor(resto / 50)
+                        if (qtdNes50 > qtd50) {
+                            faltou = qtdNes50 - qtd50
+                            qtdNes50 = qtd50
+                            resto = resto + (faltou * 50)
+                        }
+                        qtd50 -= qtdNes50
+                    }
+
+                    //sacar 50
+                    if (valorSaque >= 50 && valorSaque < 100) {
+                        qtdNes50 = Math.floor(valorSaque / 50)
+                        resto = valorSaque % (qtdNes50 * 50)
+                        if (qtdNes50 > qtd50) {
+                            faltou = qtdNes50 - qtd50
+                            qtdNes50 = qtd50
+                            resto = resto + (faltou * 50)
+                        }
+                        // sacar 50 + 10
+                        if (valorSaque > 50 && resto < 50) {
+                            qtdNes10 = Math.floor(resto / 10)
+                            resto = resto % (qtdNes10 * 10)
+                            qtd10 -= qtdNes10
+                        }
+                        qtd50 -= qtdNes50
+                    }
+
+                    //transição 50 > 10
+
+                    if (qtd100 == 0 && qtd50 == 0) {
+                        qtdNes10 = Math.floor(resto / 10)
+                        if (qtd10 > qtdNes10) {
+                            qtd10 -= qtdNes10
+                        }
+                    }
+
+                    // sacar 10
+                    if (valorSaque >= 10 && valorSaque < 50 && qtd10 > 0) {
+                        qtdNes10 = Math.floor(valorSaque / 10)
+                        resto = valorSaque % (qtdNes10 * 10)
+                        qtd10 -= qtdNes10
+                    }
+
+                    console.log('resto:' + resto)
+                    // console.log('montante' + montante)
+                    console.log('100 ' + qtd100)
+                    console.log('50 ' + qtd50)
+                    console.log('10 ' + qtd10)
+                }
+            } else if (qtd100 == 0 && qtd50 == 0 && qtd10 == 0) {
+                alert('A quantidade e valor das cédulas disponíveis não atende o valor desejado');
+            } else {
+                alert('Montante disponível não atende a solicitação')
+            }
+        } else {
+            alert('Impossível sacar 0 ou menos')
+        }
+    }
+</script>

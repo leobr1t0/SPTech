@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05 - Lista 07</title>
+</head>
+<body>
+    <h1>Exercício 05 - Lista 07</h1>
+    <button onclick="exibir()">Números cabalísticos</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        var count = 0
+        while(count <= 30) {
+            if(count == 3 || count == 4 || count == 7 || count == 10 || count == 12) {
+            } else {
+                res.innerHTML += `${count}<br>`
+            }
+            count++
+        }
+    }
+</script>
+

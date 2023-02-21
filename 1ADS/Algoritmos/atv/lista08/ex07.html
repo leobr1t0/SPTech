@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 - Lista FOR</title>
+</head>
+
+<body>
+    <h1>Exercício 08 - Lista FOR</h1>
+    Digite o limite superior: <input type="text" id="numSuperior">
+    <button onclick="contar()">Contar</button>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var limSuperior = Number(numSuperior.value);
+
+        if (limSuperior >= 100) {
+            alert('O limite superior deve ser menor que 100');
+        } else {
+            for (var count = 5; count <= limSuperior; count++) {
+                res.innerHTML += `${count}<br>`
+            }
+        }
+    }
+</script>

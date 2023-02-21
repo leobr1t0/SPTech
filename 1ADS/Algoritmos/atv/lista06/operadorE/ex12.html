@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 12 - Lista 06 - Operador E</h1>
+    Digite a quantidade de passagens que deseja adquirir: <input type="text" id="iptQtdPassagens">
+    <button onclick="comprar()">Comprar</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function comprar() {
+        var qtd = Number(iptQtdPassagens.value);
+        var valorPassagem = 4.40;
+        var preco = qtd * valorPassagem;
+        var desconto = 0;
+        var novoPreco = 0;
+
+        if(qtd >= 8 && qtd <= 50) {
+            if(qtd >= 8 && qtd <= 19 ) {
+                desconto = (preco * 3) / 100;
+                novoPreco = preco - desconto;
+                
+            } else if(qtd >= 20 && qtd <= 49) {
+                desconto = (preco * 5) / 100;
+                novoPreco = preco - desconto;
+
+            } else {
+                desconto = (preco * 7) / 100;
+                novoPreco = preco - desconto;
+            }
+
+            res.innerHTML = `${qtd} passagens <br> Total a pagar ${novoPreco.toFixed(2)}`;
+        } else {
+            alert("Quantidade inválida para o fidelidade!")
+        }
+
+    }
+</script>

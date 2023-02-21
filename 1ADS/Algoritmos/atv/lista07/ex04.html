@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Lista 07</title>
+</head>
+<body>
+    <h1>Exercício 04 - Lista 07</h1>
+    <button onclick="exibir()">S2 Pares</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        var count = 0
+        while(count <= 100) {
+            if(count % 2 == 0) {
+                res.innerHTML += `${count}<br>`
+            }
+            count++
+        }
+    }
+</script>

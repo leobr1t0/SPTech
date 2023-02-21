@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14 - Lista 06 - Operador E</title>
+</head>
+
+<body>
+    <h1>Exercício 14 - Lista 06 - Operador E</h1>
+    <div id="selecao">
+        <h2>Dados do processo de seleção - Piloto:</h2>
+        Digite a altura inicial desejada: <input type="text" id="iptAlturaInicialPiloto"><br><br>
+        Digite a altura final desejada: <input type="text" id="iptAlturaFinalPiloto"><br><br>
+        <button onclick="verificarPiloto()">Verificar piloto</button>
+
+        <h2>Dados do processo de seleção - Jogador de Basquete:</h2>
+        Digite a altura inicial desejada: <input type="text" id="iptAlturaInicialJogador"><br><br>
+        Digite a altura final desejada: <input type="text" id="iptAlturaFinalJogador"><br><br>
+        <button onclick="verificarJogador()">Verificar jogador</button>
+        <button onclick="selecionar()">Selecionar</button>
+    </div>
+
+    <div id="selecao2" style="display: none;">
+        <h2>Processo de Seleção de novos atletas</h2>
+        <h4>Critério de Seleção de piloto – altura entre <span id="subTitleAltInicialPiloto">9,99</span> até <span id="subTitleAltFinalPiloto">9,99</span></h4>
+        <h4>Critério de Seleção de jogador de basquete – altura entre <span id="subTitleAltInicialJogador">9,99</span> até <span id="subTitleAltFinalJogador">9,99</span></h4>
+        Digite o nome do atleta: <input type="text" id="iptNomeAtleta"><br><br>
+        Digite a altura do atleta: <input type="text" id="iptAlturaAtleta"><br><br>
+        Selecione a modalidade: 
+        <select id="selModalidade">
+            <option value="*">Selecione</option>
+            <option value="piloto">Piloto</option>
+            <option value="jogador">Jogador de Basquete</option>
+        </select>
+        <button onclick="cadastrar()">Cadastrar</button>
+    </div>
+
+    <div id="res" style="display: none;">⬇ Veja a situação do piloto abaixo ⬇</div>
+</body>
+
+</html>
+<script>
+    var altInicialPiloto = 0;
+    var altFinalPiloto = 0;
+    var altInicialJogador = 0;
+    var altFinalJogador = 0;
+
+    function verificarPiloto() {
+        altInicialPiloto = Number(iptAlturaInicialPiloto.value);
+        altFinalPiloto = Number(iptAlturaFinalPiloto.value);
+
+        if (altInicialPiloto > 1 && altFinalPiloto > altInicialPiloto) {
+            alert("Alturas cadastradas");
+            iptAlturaInicialPiloto.value = '';
+            iptAlturaFinalPiloto.value = '';
+
+        } else {
+            alert('Intervalo entre alturas inválido, tente novamente!');
+        }
+    }
+
+    function verificarJogador() {
+        altInicialJogador = Number(iptAlturaInicialJogador.value);
+        altFinalJogador = Number(iptAlturaFinalJogador.value);
+
+        if (altInicialJogador > 1.5 && altFinalJogador > altInicialJogador) {
+            alert("Alturas cadastradas");
+            iptAlturaInicialJogador.value = '';
+            iptAlturaFinalJogador.value = '';
+
+        } else {
+            alert('Intervalo entre alturas inválido, tente novamente!');
+        }
+    }
+
+    function selecionar() {
+        selecao.style.display = 'none';
+        selecao2.style.display = 'block';
+        res.style.display = 'block';
+        subTitleAltInicialPiloto.innerHTML = altInicialPiloto.toFixed(2);
+        subTitleAltFinalPiloto.innerHTML = altFinalPiloto.toFixed(2);
+        subTitleAltInicialJogador.innerHTML = altInicialJogador.toFixed(2);
+        subTitleAltFinalJogador.innerHTML = altFinalJogador.toFixed(2);
+    }
+
+    function cadastrar() {
+        var modalidade = selModalidade.value;
+        var nome = iptNomeAtleta.value;
+        var altura = Number(iptAlturaAtleta.value);
+
+        if(modalidade == 'piloto') {
+            if(altura >= altInicialPiloto && altura <= altFinalPiloto) {
+                res.innerHTML += `<br>O candidato ${nome} com altura de ${altura.toFixed(2)}m participará do processo de seleção de piloto`
+            } else {
+                res.innerHTML += `<br>Infelizmente o candidato ${nome} com altura de ${altura.toFixed(2)}m não atende os requisitos`
+            }
+        } else if(modalidade == 'jogador') {
+            if(altura >= altInicialJogador && altura <= altFinalJogador) {
+                res.innerHTML += `<br>O candidato ${nome} com altura de ${altura.toFixed(2)}m participará do processo de seleção de jogador`
+            } else {
+                res.innerHTML += `<br>Infelizmente o candidato ${nome} com altura de ${altura.toFixed(2)}m não atende os requisitos`
+            }
+        }
+    }
+</script>

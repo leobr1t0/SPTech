@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 08 - Lista 06 - Operador E</h1>
+    Digite seu login: <input type="text" id="iptLogin"><br>
+    Digite sua senha: <input type="password" id="iptSenha"><br>
+    <button onclick="entrar()">Entrar</button>
+</body>
+</html>
+<script>
+    function entrar() {
+        var login = iptLogin.value;
+        var senha = iptSenha.value;
+
+        if(login == 'SPTech' && senha == 'digital') {
+            alert('Usuário autenticado com sucesso!');
+        } else {
+            alert('Falha na autenticação');
+        }
+    }
+</script>

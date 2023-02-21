@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 - Lista 09</title>
+</head>
+<body>
+    <h1>Exercício 13 - Lista 09</h1>
+    Digite o login: <input type="text" id="iptLogin"><br>
+    Digite a senha: <input type="text" id="iptSenha"><br>
+    <button onclick="entrar()">Entrar</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function entrar() {
+        var login = iptLogin.value;
+        var senha = iptSenha.value;
+        var loginCerto = 'aidimin';
+        var senhaCerta = 'seinha';
+        var usuarioCerto = loginCerto && senhaCerta;
+        var erro = false;
+
+        res.innerHTML = ''
+                
+        if(login != loginCerto && senha == senhaCerta) {
+            res.innerHTML = `<span style="color: red;"> Seu login está inválido! </span>`
+            erro = true;
+        }
+        
+        if(senha != senhaCerta && login == loginCerto) {
+            res.innerHTML = `<span style="color: red;"> Sua senha está inválida! </span>`
+            alert('Entre em contato com o suporte para recuperar sua senha - 4002-8922');
+            erro = true;
+        }
+        
+        if(login != loginCerto && senha != senhaCerta) {
+            res.innerHTML = `<span style="color: red;"> Sua senha e seu login estão inválidos! </span>`
+            erro = true;
+        }
+        
+        if(erro == false) {
+            res.innerHTML = `<span style="color: blue;"> Usuário autenticado com sucesso! </span>` 
+        }
+        
+    }
+</script>

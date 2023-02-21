@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09 - Lista 09</title>
+</head>
+<body>
+    <h1>Exercício 09 - Lista 09</h1>
+    Digite o login: <input type="text" id="iptLogin"><br>
+    Digite a senha <input type="text" id="iptSenha"><br>
+    <button onclick="validar()">Validar</button>
+</body>
+</html>
+<script>
+    function validar() {
+        var login = iptLogin.value;
+        var senha = iptSenha.value;
+
+        if((login.endsWith('@SPTech.com.br') == false) || (login.startsWith('@SPTech.com.br') == true && login.endsWith('@SPTech.com.br') == true) || (senha.length < 4)) {
+            alert('Valores inválidos');
+        } else {
+            alert('Cadastro válido');
+        }
+    }
+</script>

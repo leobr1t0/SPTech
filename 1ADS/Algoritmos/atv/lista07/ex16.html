@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 - Lista 07</title>
+</head>
+
+<body>
+    <h1>Exercício 16 - Lista 07</h1>
+    Digite a quantidade de elefantes <input type="text" id="iptQtdElefante">
+    <button onclick="exibir()">Atazanar a médium</button>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function exibir() {
+        var count = 1
+        var vzs = 2
+        var qtd = Number(iptQtdElefante.value)
+        var repete = ''
+        var fraseRep = ``
+        var frase = '1 elefante incomoda muita gente<br>'
+        res.innerHTML = ''
+
+        if (Number.isNaN(qtd)) {
+            alert('Digite um número válido')
+        }else if (qtd <= 1) {
+            alert('Digite um número maior que 1')
+        } else {
+            while (count < qtd) {
+                if (count == 1) {
+                    repete += `incomodam, `
+                }
+
+                fraseRep = `${vzs} elefantes`
+                repete += `incomodam, `
+
+                res.innerHTML += `${frase}`
+                res.innerHTML += `${fraseRep} ${repete} muito mais!<br>`
+
+                count++
+                vzs++
+            }
+        }
+
+    }
+</script>

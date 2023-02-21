@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 07 - Lista 06 - Operador E</h1>
+    Digite a nota de um aluno: <input type="text" id="iptNota"><br>
+    Digite a frequência de um aluno: <input type="text" id="iptFreq"><br>
+    <button onclick="avaliar()">Avaliar aluno</button><br><br>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var nota = Number(iptNota.value);
+        var freq = Number(iptFreq.value);
+
+        if(nota > 6 && freq > 75) {
+            alert(`Nota: ${nota}; Frequência: ${freq} - Parabéns! aprovado!`);
+        } else {
+            alert(`Nota: ${nota}; Frequência: ${freq} - Infelizmente, não foi desta vez`);
+        }
+    }
+</script>

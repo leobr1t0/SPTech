@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09 - Lista FOR</title>
+</head>
+
+<body>
+    <h1>Exercício 09 - Lista FOR</h1>
+    Digite o limite inferior: <input type="text" id="numInferior"><br>
+    Digite o limite superior: <input type="text" id="numSuperior">
+    <button onclick="contar()">Contar</button>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var limInferior = Number(numInferior.value);
+        var limSuperior = Number(numSuperior.value);
+
+        if (Number.isNaN(limInferior) || Number.isNaN(limSuperior)) {
+            alert('Digite um número válido nos campos');
+        } else if (limInferior == '' || limSuperior == '') {
+            alert('Preencha os campos');
+        } else if (limSuperior < limInferior) {
+            alert('O limite superior deve ser maior que o inferior')
+        } else if (limInferior <= 1) {
+            alert('O limite inferior deve ser maior que 1')
+        } else if (limSuperior >= 100) {
+            alert('O limite superior deve ser maior que 100')
+        } else {
+            for (var count = limInferior; count <= limSuperior; count++) {
+                if(count % 2 != 0) {
+                    res.innerHTML += `${count}<br>`
+                }
+            }
+        }
+    }
+</script>

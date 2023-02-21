@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Cofrinho</title>
+</head>
+
+<body>
+    <h1>Cofrinho de Marco</h1>
+    Digite quanto você tem na poupança: <input type="text" id="iptQtdPoupanca"><br><br>
+    Digite quanto poupará por mês: <input type="text" id="iptQtdPoupaMes"><br><br>
+    Digite quantos meses você poupará: <input type="text" id="iptQtdMes">
+    <button onclick="verPoupanca()">Vamos poupar</button>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    var poupanca = 0
+    var poupancaMes = 0
+    function verPoupanca() {
+        var qtdPoupancaComeco = Number(iptQtdPoupanca.value)
+        var poupaMes = Number(iptQtdPoupaMes.value)
+        var qtdMes = Number(iptQtdMes.value)
+        var count = 0
+        var totalPoupado = poupaMes * qtdMes
+
+        res.innerHTML = ''
+
+        if (Number.isNaN(qtdPoupancaComeco) || Number.isNaN(poupaMes) || Number.isNaN(qtdMes)) {
+            alert('Digite uma quantidade válida numérica nos campos')
+        } else if (poupaMes <= 0) {
+            alert('Não é possível poupar zero ou menos por mês')
+        } else if (qtdMes < 6 || qtdMes > 20) {
+            alert('Digite uma quantidade de meses entre 6 e 20')
+        } else {
+            poupanca = qtdPoupancaComeco + poupaMes
+            while (count < qtdMes) {
+                count++
+                if (count == 1) {
+                    res.innerHTML += `<br>Marco tinha <b>R$ ${qtdPoupancaComeco.toFixed(2)}</b>, depois do depósito do <b>${count}º</b> mês ele ficou com <b> R$ ${poupanca.toFixed(2)}</b><br>`
+                } else {
+                    poupancaMes = poupanca + poupaMes
+                    res.innerHTML += `Marco tinha <b>R$ ${poupanca.toFixed(2)}</b>, depois do depósito do <b>${count}º</b> mês ele ficou com <b> R$ ${poupancaMes.toFixed(2)}</b><br>`
+                    poupanca += poupaMes
+                }
+            }
+            res.innerHTML += `<br>Você começou com R$ <b>${qtdPoupancaComeco.toFixed(2)}</b><br>
+                                Durante os <b>${count}</b> meses, você poupou <b>R$ ${totalPoupado.toFixed(2)}</b><br>
+                                E agora você tem R$ <b>${poupanca.toFixed(2)}</b>`
+        }
+    }   
+</script>

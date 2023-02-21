@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06 - Lista 07</title>
+</head>
+<body>
+    <h1>Exercício 06 - Lista 07</h1>
+    Digite o nome da pessoa que você mais gosta: <input type="text" id="iptNome"><br><br>
+    Digite quanto você a ama: <input type="text" id="iptNum">
+    <button onclick="exibir()">Expressar amor</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        var count = 0;
+        var nome = iptNome.value
+        var num = Number(iptNum.value)
+
+        while(count < num) {
+            count++
+            res.innerHTML += `${count} - <b>${nome}</b>, eu te amo! Sempre lembre disso<br>`
+        }
+    }
+</script>

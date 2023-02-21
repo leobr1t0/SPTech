@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 - Lista 08</title>
+</head>
+<body>
+    <h1>Exercício 12 - Lista 08</h1>
+    Digite a quantidade de cocas que ja bebeu na vida: <input type="text" id="iptQtdCoca">
+    <button onclick="exibir()">Ver a quantidade</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        res.innerHTML = "";
+
+        var qtd = Number(iptQtdCoca.value);
+
+        for(let i = 0; i < qtd; i++) {
+            res.innerHTML += `<img src="https://cdn-icons-png.flaticon.com/512/2688/2688584.png" style="width: 50px;">`;
+        }
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 - Lista 06 - Operador OU</title>
+</head>
+<body>
+    <h1>Exercício 11 - Lista 06 - Operador OU</h1>
+    Selecione a marca da TV:
+    <select name="" id="selMarca">
+        <option value="*">Selecione</option>
+        <option value="samsung">Samsung</option>
+        <option value="lg">LG</option>
+        <option value="mondial">Mondial</option>
+        <option value="britania">Britânia</option>
+    </select><br>
+    Digite o preço da TV: <input type="text" id="iptPreco"><br>
+    <button onclick="analisar()">Analisar compra</button><br><br>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var marca = selMarca.value;
+        var preco = Number(iptPreco.value);
+
+        if(marca == "*") {
+            alert("Selecione uma marca");
+        } else if(iptPreco.value == "") {
+            alert("Digite um preço");
+        } else if(preco < 800 || preco > 2000) {
+            res.innerHTML = "TV fora da faixa de preço";
+
+            if(preco < 800) {
+                res.innerHTML = "Preço baixo demais!";
+            } else {
+                res.innerHTML = "TV cara demais, infelizmente";
+            }
+        } else if(preco >= 800 && preco <= 2000) {
+            if(marca == "lg" || marca == "samsung") {
+                res.innerHTML = "Essa TV pode entrar na sua lista!";
+            } else {
+                res.innerHTML = "Na faixa de preço, porém marca não confiável";
+            }
+        } 
+    }
+</script>

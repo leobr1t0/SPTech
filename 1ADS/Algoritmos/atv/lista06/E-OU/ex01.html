@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Lista 07</title>
+</head>
+<body>
+    <h1>Jokenpô</h1>
+    Jogador 1:
+    <select id="selJogador1">
+        <option value="pedra">Pedra</option>
+        <option value="papel">Papel</option>
+        <option value="tesoura">Tesoura</option>
+    </select><br><br>
+
+    Jogador 2:
+    <select id="selJogador2">
+        <option value="pedra">Pedra</option>
+        <option value="papel">Papel</option>
+        <option value="tesoura">Tesoura</option>
+    </select><br><br>
+    <button onclick="verificar()">Ver ganhador</button>
+</body>
+</html>
+<script>
+    function verificar() {
+        var jogador1 = selJogador1.value;
+        var jogador2 = selJogador2.value;
+
+        if(jogador1 == 'pedra' && jogador2 == 'tesoura' || jogador1 == 'papel' && jogador2 == 'pedra' || jogador1 == 'tesoura' && jogador2 == 'papel') {
+            alert('Jogador 1 vence!');
+        } else {
+            alert('Jogador 2 vence!');
+        }
+
+    }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Lista 07</title>
+</head>
+
+<body>
+    <h1>Truco</h1>
+    Primeira carta:
+    <select id="selCarta1">
+        <option value="cNormal">Carta normal</option>
+        <option value="cOuros">Manilha de ouros</option>
+        <option value="cEspadas">Manilha de espadas</option>
+        <option value="cCopas">Manilha de copas</option>
+        <option value="cPaus">Manilha de paus</option>
+    </select><br><br>
+    Segunda carta:
+    <select id="selCarta2">
+        <option value="cNormal">Carta normal</option>
+        <option value="cOuros">Manilha de ouros</option>
+        <option value="cEspadas">Manilha de espadas</option>
+        <option value="cCopas">Manilha de copas</option>
+        <option value="cPaus">Manilha de paus</option>
+    </select><br><br>
+    <button onclick="jogar()">Jogar</button>
+</body>
+
+</html>
+<script>
+    function jogar() {
+        var carta1 = selCarta1.value
+        var carta2 = selCarta2.value
+
+        if (carta1 != carta2) {
+            if ((carta1 == 'cNormal' && carta2 == 'cOuros') || (carta1 == 'cOuros' || carta2 != 'cNormal' || carta1 != 'cPaus' || 
+                carta1 != 'cCopas' && carta2 == 'cPaus') ||
+               (carta1 != 'cEspadas' && carta2 != 'cNormal' || carta2 != 'cOuros')
+               ){
+                alert('Jogador 2 venceu!')
+            } else {
+                alert('Jogador 1 venceu!')
+            }
+        } else {
+            alert('Sem cartas iguais!')
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 - Lista 07</title>
+</head>
+<body>
+    <h1>Exercício 08 - Lista 07</h1>
+    Digite um número <input type="text" id="iptNum">
+    <button onclick="exibir()">Viva o 7!</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        var count = 0
+        var num = Number(iptNum.value)
+        if(num < 0) {
+            alert('O número deve ser zero ou maior')
+        } else if(num > 200) {
+            alert('O número deve ser menor que 200')
+        } else {
+            while(count <= num) {
+                if(count % 7 == 0 ) {
+                    res.innerHTML += `${count}<br>`
+                }
+                count++
+            }
+        }
+    }
+</script>

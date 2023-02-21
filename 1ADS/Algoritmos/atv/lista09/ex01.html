@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Lista 09</title>
+</head>
+<body>
+    <h1>Exercício 01 - Lista 09</h1>
+    Digite quantas vitórias o time possui: <input type="text" id="iptVitorias"><br>
+    Digite quantos empates o time possui: <input type="text" id="iptEmpates"><br>
+    Digite quantas derrotas o time possui: <input type="text" id="iptDerrotas"><br>
+    <button onclick="analisar()">Analisar</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+
+        var vitorias = Number(iptVitorias.value)
+        var empates = Number(iptEmpates.value)
+        var derrotas = Number(iptDerrotas.value)
+
+        var time = {
+            vitorias: vitorias,
+            empates: empates,
+            derrotas: derrotas,
+        }
+
+        var pontos = (time.vitorias * 3) + (time.derrotas * 0) + (time.empates * 1)
+
+        res.innerHTML += `O time terminou o campeonato com ${pontos} pontos`
+    }
+</script>

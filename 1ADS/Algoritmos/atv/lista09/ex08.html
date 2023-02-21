@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 - Lista 09</title>
+</head>
+<body>
+    <h1>Exercício 08 - Lista 09</h1>
+    Digite um nome: <input type="text" id="iptNome" onkeyup="analisar()">
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var nome = iptNome.value;
+
+        if(nome.length == 0) {
+            res.innerHTML = `<span style="color: red"> Por favor, informe o nome! </span>`
+        } else if(nome.trimStart() == '' || nome.trimEnd() == '') {
+            res.innerHTML = `<span style="color: red"> Por favor, informe o nome! </span>`
+        } else if(nome.indexOf('fogo') > -1 || nome.indexOf('Fogo') > -1) {
+            res.innerHTML = `<span style="color: red"> Com fogo não se brinca! 🔥 </span>`
+        } else {
+            res.innerHTML = `<span style="color: green"> Nome OK </span>`
+        }
+
+    }
+</script>

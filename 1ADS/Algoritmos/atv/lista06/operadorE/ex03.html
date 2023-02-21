@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 03 - Lista 06 - Operador E</h1>
+    Digite a nota de um aluno: <input type="text" id="iptNota">
+    <button onclick="avaliar()">Avaliar aluno</button><br><br>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var nota = Number(iptNota.value);
+
+        if(nota >= 0 && nota <= 10) {
+            alert("Nota válida!");
+        } else {
+            alert("Onde já se viu nota menor que 0 e maior que 10?!");
+        }
+    }
+</script>

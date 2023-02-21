@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06 - Lista 06 - Operador OU</title>
+</head>
+<body>
+    <h1>Exercício 06 - Lista 06 - Operador OU</h1>
+    <p>Você já clicou <b id="resCount">0</b> vezes!</p>
+    <button onclick="clique()">Clique cabalístico</button>
+</body>
+</html>
+<script>
+    var count = 0
+    function clique(){
+        count += 1
+        resCount.innerHTML = count
+
+        if(count == 3 || count == 4 || count == 7 || count == 10) {
+            alert(`Você clicou ${count} vezes e Juliana gosta desse número`)
+        }
+    }
+</script>

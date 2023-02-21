@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 - Lista 07</title>
+</head>
+<body>
+    <h1>Exercício 13 - Lista 07</h1>
+    Digite quantos dias você faz musculação: <input type="text" id="iptDias">
+    <button onclick="exibir()">Exibir rotina mensal</button>
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        var dias = Number(iptDias.value)
+        var count = 0
+        var dia = 1
+
+        res.innerHTML = ''
+        while(count < 30) {
+            if(count % dias == 0) {
+                res.innerHTML += `Dia ${dia} - <b>Musculação</b><br>`
+            } else {
+                res.innerHTML += `Dia ${dia} - Comer, dormir, etc.<br>`
+            }
+            count ++
+            dia ++
+        }
+    }
+</script>

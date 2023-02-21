@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 11 - Lista 06 - Operador E</h1>
+    Digite sua idade: <input type="text" id="iptIdade"><br><br>
+    Digite seu salário: <input type="text" id="iptSalario">
+    <button onclick="analisar()">Analisar Situação</button>
+
+    <div id="res">Veja sua situação abaixo</div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var idade = Number(iptIdade.value)
+        var salario = Number(iptSalario.value)
+
+        if(idade < 18 && salario < 2500) {
+            res.innerHTML = `Você tem ${idade} e seu salário é de ${salario}. Menor de idade e liso`
+        } else if(idade < 18 && salario > 2500) {
+            res.innerHTML = `Você tem ${idade} e seu salário é de ${salario}. Menor de idade e ostentação`
+        } else if(idade >= 18 && salario < 3500) {
+            res.innerHTML = `Você tem ${idade} e seu salário é de ${salario}. Maior de idade e liso`
+        } else if(idade >= 18 && salario > 3500 ) {
+            res.innerHTML = `Você tem ${idade} e seu salário é de ${salario}. Maior de idade e ostentação`
+        } else {
+            res.innerHTML = `Você tem ${idade} e seu salário é de ${salario}. Maior de idade e mega ostentação`
+        }
+    }
+</script>

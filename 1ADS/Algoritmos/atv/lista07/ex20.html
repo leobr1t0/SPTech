@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20 - Lista 07</title>
+    <style>
+        #res {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercício 20 - Lista 07</h1>
+    Digite quantos ônibus precisa para chegar até a SPTech: <input type="text" id="iptQtdOnibus"><br>
+    Digite quantos trens precisa para chegar até a SPTech: <input type="text" id="iptQtdTrens"><br>
+    Digite quantos metrôs precisa para chegar até a SPTech: <input type="text" id="iptQtdMetros"><br>
+    <button onclick="exibir()">#Partiu Trajeto</button><br><br>
+    <div id="res">
+        <div id="resOnibus"></div>
+        <div id="resTrem"></div>
+        <div id="resMetro"></div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function exibir() {
+        var countOnibus = 0;
+        var countTrem = 0;
+        var countMetro = 0;
+        var qtdOnibus = Number(iptQtdOnibus.value);
+        var qtdTrem = Number(iptQtdTrens.value);
+        var qtdMetro = Number(iptQtdMetros.value);
+
+        var frase2 = "Começando a cansar";
+        var frase3 = "Já cansado!";
+        
+        resOnibus.innerHTML = 'Quantidade de ônibus<br>';
+        resTrem.innerHTML = 'Quantidade de Trens<br>';
+        resMetro.innerHTML = 'Quantidade de metrôs<br>';
+        
+        while (countOnibus < qtdOnibus) {
+            countOnibus++;
+            var fraseOnibus = `Pegando o ${countOnibus}º buzão`;
+            if (countOnibus == 2) {
+                resOnibus.innerHTML += `<span style="color: red;">${fraseOnibus}, ${frase2}</span><br>`;
+            } else if (countOnibus == 3) {
+                resOnibus.innerHTML += `<span style="color: red;">${fraseOnibus}, ${frase3}</span><br>`;
+            } else {
+                resOnibus.innerHTML += `<span style="color: red;">${fraseOnibus}</span><br>`;
+            }
+        }
+        
+        while (countTrem < qtdTrem) {
+            countTrem++;
+            var fraseTrem = `Pegando o ${countTrem}º trem`;
+            if (countTrem == 2) {
+                resTrem.innerHTML += `<span style="color: green;">${fraseTrem}, ${frase2}</span><br>`;
+            } else if (countTrem == 3) {
+                resTrem.innerHTML += `<span style="color: green;">${fraseTrem}, ${frase3}</span><br>`;
+            } else {
+                resTrem.innerHTML += `<span style="color: green;">${fraseTrem}</span><br>`;
+            }
+        }
+        
+        while (countMetro < qtdMetro) {
+            countMetro++;
+            var fraseMetro = `Pegando o ${countMetro}º metrô`;
+            if (countMetro == 2) {
+                resMetro.innerHTML += `<span style="color: blue;">${fraseMetro}, ${frase2}</span><br>`;
+            } else if (countMetro == 3) {
+                resMetro.innerHTML += `<span style="color: blue;">${fraseMetro}, ${frase3}</span><br>`;
+            } else {
+                resMetro.innerHTML += `<span style="color: blue;">${fraseMetro}</span><br>`;
+            }
+        }
+    }
+</script>

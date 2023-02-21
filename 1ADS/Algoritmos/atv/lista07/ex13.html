@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 - Lista 07</title>
+</head>
+
+<body>
+    <h1>Exercício 12 - Lista 07</h1>
+    Selecione um número para ver a tabuada:
+    <select id="selNum">
+        <option value="x">Selecione uma opção</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <button onclick="exibir()">Ver tabuada</button>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function exibir() {
+        var count = 0
+        var numTab = Number(selNum.value)
+        if (Number.isNaN(numTab)) {
+            alert('Selecione uma opção válida')
+        } else {
+            while (count < 12) {
+                count++
+                if (count % 2 == 0) {
+                    res.innerHTML += `<div style="color: red;">${numTab} x ${count} = ${numTab * count}</div>`
+                } else {
+                    res.innerHTML += `<div style="color: blue;">${numTab} x ${count} = ${numTab * count}</div>`
+                }
+            }
+        }
+    }
+</script>

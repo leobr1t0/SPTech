@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Lista 06 - Operador OU</title>
+</head>
+<body>
+    <h1>Exercício 01 - Lista 06 - Operador OU</h1>
+    Digite o nome da fruta que chegou na mesa: <input type="text" id="iptFruta">
+    <button onclick="verificar()">Vai comer?</button>
+</body>
+</html>
+<script>
+    function verificar() {
+        var fruta = iptFruta.value
+
+        if(fruta == 'uva' || fruta == 'abacaxi') {
+            alert(`Sim, vai comer ${fruta}`)
+        } else {
+            alert(`A fruta ${fruta} ela não come`)
+        }
+    }
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22 - Lista 08</title>
+</head>
+
+<body>
+    <h1>Exercício 22 - Lista 08</h1>
+    Digite o limite inferior da amostragem: <input type="text" id="iptLimInferior"><br>
+    Digite o limite superior da amostragem: <input type="text" id="iptLimSuperior"><br>
+    Digite um número para divisibilidade: <input type="text" id="iptNumDiv"><br>
+    <button onclick="mostrar()">Mostrar</button>
+    <div id="res"></div>
+    <div id="resImg"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var limInferior = Number(iptLimInferior.value);
+        var limSuperior = Number(iptLimSuperior.value);
+        var numDiv = Number(iptNumDiv.value);
+        var qtd = 0;
+        var erro = false;
+
+        res.innerHTML = `<br>`;
+        resImg.innerHTML = `<br>`;
+
+        if (Number.isNaN(limInferior) || Number.isNaN(limSuperior) || Number.isNaN(numDiv)) {
+            alert('Digite um número válido nos campos');
+            erro = true;
+        }
+
+        if (limInferior == '' || limSuperior == '' || numDiv == '') {
+            alert('Preencha os campos');
+            erro = true;
+        }
+
+        if (limInferior < 20) {
+            alert('O limite inferior deve ser maior que 20');
+            erro = true;
+        }
+
+        if (limSuperior < limInferior || limSuperior >= 400) {
+            alert('Limite superior inválido, verifique o conteúdo');
+            erro = true;
+        }
+
+        if (numDiv < 3 || numDiv > 20) {
+            alert('O número de divisibilidade tem que estar entre 3 e 20');
+            erro = true;
+        }
+
+        if (erro == false) {
+            resImg.style.display = "block";
+            for (let i = limInferior; i <= limSuperior; i++) {
+                if (i % numDiv == 0) {
+                    resImg.innerHTML += `<img src="https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=600" style="width: ${i}px">`
+                    res.innerHTML += `O tamanho da imagem é ${i}; `;
+                    qtd++;
+                }
+            }
+
+            if (qtd == 0) {
+                res.innerHTML = "Não foram encontrados números divisíveis";
+            } else {
+                res.innerHTML += `
+                        <br><br><b>ANÁLISE DAS IMAGENS EXIBIDOS</b><br>
+    
+                        Total de imagens exibidas: <b>${qtd}</b><br>
+                    `;
+            }
+
+        }
+    }
+</script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23 - Lista 08</title>
+</head>
+
+<body>
+    <h1>Exercício 23 - Lista 08</h1>
+    Digite o limite inferior da amostragem: <input type="text" id="iptLimInferior"><br>
+    Digite o limite superior da amostragem: <input type="text" id="iptLimSuperior"><br>
+    Digite o primeiro número para divisibilidade: <input type="text" id="iptNum1Div"><br>
+    Digite o segundo numero para divisibilidade: <input type="text" id="iptNum2Div">
+    <button onclick="mostrar()">Mostrar</button>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var limInferior = Number(iptLimInferior.value);
+        var limSuperior = Number(iptLimSuperior.value);
+        var num1Div = Number(iptNum1Div.value);
+        var num2Div = Number(iptNum2Div.value);
+        var qtd = 0;
+        var maior = limInferior;
+        var menor = limSuperior;
+        var media = 0;
+        var soma = 0
+
+        res.innerHTML = `<br>`
+
+        if (Number.isNaN(limInferior) || Number.isNaN(limSuperior) ||
+            Number.isNaN(num1Div) || Number.isNaN(num2Div)) {
+            alert('Digite um número válido nos campos');
+        } else if (limInferior == '' || limSuperior == '' || num1Div == '' || num2Div == '') {
+            alert('Preencha os campos');
+        } else if (limInferior <= 20) {
+            alert('O limite inferior deve ser maior que 20');
+        } else if (limSuperior < limInferior || limSuperior >= 1000) {
+            alert('Limite superior inválido, verifique o conteúdo');
+        } else if (num1Div < 3 || num1Div > 20) {
+            alert('Primeiro número de divisibilidade tem que estar entre 3 e 20');
+        } else if (num2Div < 3 || num2Div > 20 || num2Div == num1Div) {
+            alert('Segundo número de divisibilidade tem que estar entre 3 e 20 e ser diferente do primeiro');
+        } else {
+            for (let i = limInferior; i <= limSuperior; i++) {
+                if (i % num1Div == 0 && i % num2Div == 0) {
+                    res.innerHTML += `O número <b>${i}</b> é dívisível pelo primeiro e pelo segundo número<br>`;
+                    qtd++;
+                    soma += i;
+
+                    if (menor >= i) {
+                        menor = i;
+                    }
+                    
+                    if (maior <= i) {
+                        maior = i;
+                    }
+
+                } else if (i % num1Div == 0) {
+                    res.innerHTML += `O número <b>${i}</b> é divisível pelo primeiro número<br>`;
+                    qtd++;
+                    soma += i;
+
+                    if (menor >= i) {
+                        menor = i;
+                    }
+                    
+                    if (maior <= i) {
+                        maior = i;
+                    }
+
+                } else if (i % num2Div == 0) {
+                    res.innerHTML += `O número <b>${i}</b> é divisível pelo segundo número<br>`;
+                    qtd++;
+                    soma += i;
+
+                    if (menor >= i) {
+                        menor = i;
+                    }
+                    
+                    if (maior <= i) {
+                        maior = i;
+                    }
+                }
+            }
+
+            if (qtd == 0) {
+                res.innerHTML += `Não foram encontrados números divisíveis<br>`;
+            } else {
+                media = soma / qtd
+
+                res.innerHTML += `
+                    <br><b>ANÁLISE DOS NÚMEROS EXIBIDOS</b><br>
+
+                    Quantidade de números exibidos: <b>${qtd}</b><br>
+
+                    Média dos números exibidos: <b>${media.toFixed(2)}</b><br>
+
+                    Maior número exibido: <b>${maior}</b><br>
+
+                    Menor número exibido: <b>${menor}</b><br>
+                `
+            }
+        }
+    }
+</script>

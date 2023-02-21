@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Lista 06 - Operador OU</title>
+</head>
+<body>
+    <h1>Exercício 04 - Lista 06 - Operador OU</h1>
+    Escolha o método de pagamento: 
+    <select id="selPagamento">
+        <option value="">Selecione uma opçao</option>
+        <option value="dinheiro">Dinheiro</option>
+        <option value="debito">Cartão de débito</option>
+        <option value="credito">Cartão de crédito</option>
+        <option value="boleto">Boleto</option>
+    </select>
+    <button onclick="analisar()">Analisar compra</button>
+</body> 
+</html>
+<script>
+    function analisar() {
+        var pagamento = selPagamento.value
+
+        if(pagamento == 'dinheiro' || pagamento == 'debito') {
+            alert('Você terá que pagar a vista')
+        } else {
+            alert('O pagamento poderá ser parcelado')
+        }
+    }
+</script>

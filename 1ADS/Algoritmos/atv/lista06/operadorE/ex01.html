@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Lista 06 - Operador E</title>
+</head>
+<body>
+    <h1>Exercício 01 - Lista 06 - Operador E</h1>
+    Digite a temperatura atual: <input type="text" id="iptTemperatura">
+    <button onclick="analisar()">Analisar situação</button>
+</body>
+</html>
+<script>
+    function analisar() {
+        var temp = Number(iptTemperatura.value)
+
+        if(temp >= 21 && temp <= 24) {
+            alert('Temperatura confortável :)')
+        } else {
+            alert('Temperatura DESCONFORTÁVEL :(') 
+        }
+    }
+</script>

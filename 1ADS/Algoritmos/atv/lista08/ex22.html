@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22 - Lista 08</title>
+</head>
+
+<body>
+    <h1>Exercício 22 - Lista 08</h1>
+    Digite o limite inferior da amostragem: <input type="text" id="iptLimInferior"><br>
+    Digite o limite superior da amostragem: <input type="text" id="iptLimSuperior"><br>
+    Digite um número para divisibilidade: <input type="text" id="iptNumDiv"><br>
+    <button onclick="mostrar()">Mostrar</button>
+    <div id="res"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var limInferior = Number(iptLimInferior.value);
+        var limSuperior = Number(iptLimSuperior.value);
+        var numDiv = Number(iptNumDiv.value);
+        var qtd = 0;
+        var maior = limInferior;
+        var menor = limSuperior;
+        var media = 0;
+        var soma = 0
+
+        res.innerHTML = `<br>`
+
+        if (Number.isNaN(limInferior) || Number.isNaN(limSuperior) ||
+            Number.isNaN(numDiv)) {
+            alert('Digite um número válido nos campos');
+        } else if (limInferior == '' || limSuperior == '' || numDiv == '') {
+            alert('Preencha os campos');
+        } else if(limInferior < 1) {
+            alert('O limite inferior deve ser maior que 1');
+        } else if (limSuperior < limInferior || limSuperior >= 100) {
+            alert('Limite superior inválido, verifique o conteúdo');
+        } else if (numDiv < 3 || numDiv > 10) {
+            alert('O número de divisibilidade tem que estar entre 3 e 10');
+        } else {
+            for (let i = limInferior; i <= limSuperior; i++) {
+                if (i % numDiv == 0) {
+                    res.innerHTML += `${i}; `;
+                    qtd++;
+                    soma += i;
+
+                    if (menor >= i) {
+                        menor = i;
+                    }
+
+                    if (maior <= i) {
+                        maior = i;
+                    }
+
+                }
+            }
+
+            media = soma / qtd
+
+            res.innerHTML += `
+                    <br><br><b>ANÁLISE DOS NÚMEROS EXIBIDOS</b><br>
+
+                    Quantidade de números exibidos: <b>${qtd}</b><br>
+
+                    Somatório dos números exibidos: <b>${soma}</b><br>
+
+                    Média dos números exibidos: <b>${media.toFixed(2)}</b><br>
+
+                    Maior número exibido: <b>${maior}</b><br>
+
+                    Menor número exibido: <b>${menor}</b><br>
+                `
+        }
+    }
+</script>

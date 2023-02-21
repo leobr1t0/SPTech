@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista 09</title>
+</head>
+<body>
+    <h1>Exercício 07 - Lista 09</h1>
+    Digite um email: <input type="text" id="iptEmail" onkeyup="analisar()">
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+
+        var email = iptEmail.value;
+
+        if(email.indexOf('@') == -1 || email.indexOf('.') == -1 || email.length < 7) {
+            res.innerHTML = `<span style="color: red"> Email Inválido! </span>`
+        } else {
+            res.innerHTML = `<span style="color: green"> Email Válido! </span>`
+        }
+    }
+</script>

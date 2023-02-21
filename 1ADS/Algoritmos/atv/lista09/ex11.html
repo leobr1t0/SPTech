@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 - Lista 09</title>
+</head>
+<body>
+    <h1>Exercício 11 - Lista 09</h1>
+    Digite uma senha: <input type="text" id="iptSenha" onkeyup="analisar()">
+    <div id="res"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var senha = iptSenha.value;
+        var newPasswd = '';
+
+        for(let i = 0; i < senha.length; i++) {
+            var letra = senha[i];
+
+            if(letra == 'A' || letra == 'a') {
+                newPasswd += letra.replace(letra, '@');
+                res.innerHTML = newPasswd;
+                console.log(newPasswd);
+            } else if(letra == 'E' || letra == 'e') {
+                newPasswd += letra.replace(letra, '3');
+                res.innerHTML = newPasswd;
+                console.log(newPasswd);
+            } else {
+                newPasswd += letra;
+                res.innerHTML = newPasswd;
+                console.log(newPasswd);
+            }
+        }
+
+    }
+</script>
